@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VERANO EN INVIERNO</title>
 
@@ -20,48 +20,60 @@ scroll-behavior:smooth;
 body{
 font-family:'Montserrat',sans-serif;
 background:#000;
-overflow-x:hidden;
 color:white;
+overflow-x:hidden;
 }
 
 /* HERO */
 
 .hero{
+height:100vh;
 width:100%;
-min-height:100vh;
-background:
-linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.85)),
-url('cover1.jpg');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+position:relative;
 display:flex;
 align-items:center;
-padding:80px 8%;
-position:relative;
+padding-left:7%;
+overflow:hidden;
+
+background:
+linear-gradient(to right,rgba(0,0,0,.72),rgba(0,0,0,.25)),
+url('cover1.jpg');
+
+background-size:cover;
+background-position:center right;
+background-repeat:no-repeat;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(to bottom,transparent,rgba(0,0,0,.75));
 }
 
 .hero-content{
-max-width:700px;
+position:relative;
 z-index:2;
+max-width:760px;
 }
 
-.top-text{
-font-size:13px;
+.top{
+font-size:12px;
 letter-spacing:12px;
 color:#ff1493;
-margin-bottom:30px;
+margin-bottom:25px;
 text-transform:uppercase;
 }
 
 .title{
-line-height:.85;
-margin-bottom:30px;
+line-height:.82;
+margin-bottom:35px;
 }
 
 .title span{
 display:block;
-font-size:clamp(70px,12vw,170px);
+font-size:clamp(90px,12vw,210px);
 font-weight:900;
 text-transform:uppercase;
 }
@@ -69,92 +81,94 @@ text-transform:uppercase;
 .pink{
 color:#ff1493;
 text-shadow:
-0 0 15px #ff1493,
-0 0 40px #ff1493;
+0 0 20px #ff1493,
+0 0 60px #ff1493;
 }
 
 .blue{
-color:#3aa8ff;
+color:#3da4ff;
 text-shadow:
-0 0 15px #3aa8ff,
-0 0 40px #3aa8ff;
+0 0 20px #3da4ff,
+0 0 60px #3da4ff;
 }
 
 .desc{
-font-size:clamp(18px,2vw,32px);
-line-height:1.8;
+font-size:clamp(20px,2vw,34px);
+line-height:1.7;
 max-width:700px;
-color:#f1f1f1;
-margin-bottom:40px;
+color:#f2f2f2;
+margin-bottom:45px;
 }
 
 .btn{
 display:inline-block;
-padding:20px 45px;
-border-radius:50px;
+padding:22px 48px;
+border-radius:60px;
 background:linear-gradient(90deg,#ff1493,#2563ff);
-color:white;
 text-decoration:none;
+color:white;
 font-weight:700;
 font-size:18px;
+box-shadow:0 0 30px rgba(255,20,147,.45);
 transition:.3s;
-box-shadow:0 0 30px rgba(255,20,147,.5);
 }
 
 .btn:hover{
-transform:scale(1.06);
+transform:scale(1.05);
 }
 
 /* TRACKLIST */
 
-.track-section{
+.album{
 position:relative;
-padding:140px 8%;
+padding:130px 8%;
 background:
-linear-gradient(to bottom,rgba(0,0,0,.8),rgba(0,0,0,.95)),
+linear-gradient(to bottom,rgba(0,0,0,.75),rgba(0,0,0,.92)),
 url('cover2.jpg');
+
 background-size:cover;
-background-position:center;
+background-position:right center;
 background-attachment:fixed;
 }
 
-.overlay{
+.album::before{
+content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.45);
+background:rgba(0,0,0,.35);
 backdrop-filter:blur(2px);
 }
 
-.track-wrapper{
+.album-content{
 position:relative;
 z-index:2;
 }
 
-.track-title{
-font-size:70px;
+.album-title{
+font-size:75px;
 font-weight:900;
 margin-bottom:20px;
 text-transform:uppercase;
 }
 
-.track-sub{
+.album-sub{
 font-size:20px;
-color:#ff4da6;
-margin-bottom:80px;
-letter-spacing:4px;
+letter-spacing:5px;
+color:#ff1493;
+margin-bottom:70px;
 }
 
-.grid{
+.tracks{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .track{
 background:rgba(0,0,0,.45);
 border:1px solid rgba(255,255,255,.08);
 padding:25px;
-border-radius:25px;
+border-radius:24px;
 backdrop-filter:blur(12px);
 transition:.3s;
 }
@@ -162,30 +176,30 @@ transition:.3s;
 .track:hover{
 transform:translateY(-8px);
 border-color:#ff1493;
-box-shadow:0 0 30px rgba(255,20,147,.25);
+box-shadow:0 0 25px rgba(255,20,147,.25);
 }
 
-.track-number{
-font-size:14px;
-color:#ff1493;
-margin-bottom:10px;
+.number{
+font-size:13px;
 letter-spacing:3px;
+margin-bottom:12px;
+color:#ff1493;
 }
 
 .track h3{
-font-size:28px;
-margin-bottom:12px;
+font-size:27px;
+margin-bottom:10px;
 }
 
 .track p{
-color:#cfcfcf;
+color:#d1d1d1;
 line-height:1.6;
 }
 
 /* FOOTER */
 
 footer{
-padding:80px 8%;
+padding:70px 8%;
 text-align:center;
 background:#050505;
 border-top:1px solid rgba(255,255,255,.08);
@@ -193,14 +207,13 @@ border-top:1px solid rgba(255,255,255,.08);
 
 footer h2{
 font-size:60px;
-margin-bottom:20px;
 font-weight:900;
+margin-bottom:15px;
 }
 
 footer p{
-color:#aaa;
+color:#999;
 line-height:1.8;
-font-size:15px;
 }
 
 /* MOBILE */
@@ -208,24 +221,34 @@ font-size:15px;
 @media(max-width:768px){
 
 .hero{
-padding:100px 7%;
+padding:40px;
+background-position:70% center;
 }
 
-.top-text{
-letter-spacing:6px;
+.top{
 font-size:10px;
+letter-spacing:5px;
 }
 
-.track-title{
-font-size:42px;
+.title span{
+font-size:80px;
 }
 
 .desc{
-font-size:18px;
+font-size:20px;
+}
+
+.album-title{
+font-size:45px;
+}
+
+.album-sub{
+font-size:15px;
+line-height:1.7;
 }
 
 .btn{
-padding:16px 30px;
+padding:18px 35px;
 font-size:15px;
 }
 
@@ -233,13 +256,14 @@ font-size:15px;
 
 </style>
 </head>
+
 <body>
 
 <section class="hero">
 
 <div class="hero-content">
 
-<div class="top-text">
+<div class="top">
 DJ GIAN C & GROVE STUDIO PRESENTAN
 </div>
 
@@ -263,126 +287,124 @@ ENTRAR AL ÁLBUM
 
 </section>
 
-<section class="track-section" id="album">
+<section class="album" id="album">
 
-<div class="overlay"></div>
+<div class="album-content">
 
-<div class="track-wrapper">
-
-<h2 class="track-title">
+<h2 class="album-title">
 TRACKLIST
 </h2>
 
-<div class="track-sub">
+<div class="album-sub">
 DOS CLIMAS • UNA HISTORIA • MIL SENTIMIENTOS
 </div>
 
-<div class="grid">
+<div class="tracks">
 
 <div class="track">
-<div class="track-number">01</div>
+<div class="number">01</div>
 <h3>DOS CLIMAS</h3>
 <p>El inicio del viaje.</p>
 </div>
 
 <div class="track">
-<div class="track-number">02</div>
+<div class="number">02</div>
 <h3>VERANO EN INVIERNO</h3>
 <p>Calor y frío chocando.</p>
 </div>
 
 <div class="track">
-<div class="track-number">03</div>
+<div class="number">03</div>
 <h3>+ FRÍO Q AYER</h3>
 <p>La distancia duele más.</p>
 </div>
 
 <div class="track">
-<div class="track-number">04</div>
+<div class="number">04</div>
 <h3>NOCHES X LA PLAYA</h3>
 <p>Recuerdos bajo la luna.</p>
 </div>
 
 <div class="track">
-<div class="track-number">05</div>
+<div class="number">05</div>
 <h3>OJOS CANSADOS</h3>
 <p>No dormir pensando en ti.</p>
 </div>
 
 <div class="track">
-<div class="track-number">06</div>
+<div class="number">06</div>
 <h3>M NO MIENTAS</h3>
-<p>Promesas que no volvieron.</p>
+<p>Promesas rotas.</p>
 </div>
 
 <div class="track">
-<div class="track-number">07</div>
+<div class="number">07</div>
 <h3>CORA ROTO :)</h3>
 <p>Sonriendo aunque duela.</p>
 </div>
 
 <div class="track">
-<div class="track-number">08</div>
+<div class="number">08</div>
 <h3>3ER OJO</h3>
-<p>Viendo más allá del amor.</p>
+<p>Mirando más allá.</p>
 </div>
 
 <div class="track">
-<div class="track-number">09</div>
+<div class="number">09</div>
 <h3>FLASHBACKS</h3>
-<p>Todo vuelve de golpe.</p>
+<p>Todo vuelve.</p>
 </div>
 
 <div class="track">
-<div class="track-number">10</div>
+<div class="number">10</div>
 <h3>FUEGO AZUL</h3>
-<p>Pasión que quema distinto.</p>
+<p>Pasión distinta.</p>
 </div>
 
 <div class="track">
-<div class="track-number">11</div>
+<div class="number">11</div>
 <h3>MADRUGÁ</h3>
-<p>Historias después de las 3AM.</p>
+<p>Historias a las 3AM.</p>
 </div>
 
 <div class="track">
-<div class="track-number">12</div>
+<div class="number">12</div>
 <h3>X SI VUELVES</h3>
-<p>Esperando algo imposible.</p>
+<p>Esperando lo imposible.</p>
 </div>
 
 <div class="track">
-<div class="track-number">13</div>
+<div class="number">13</div>
 <h3>MOJANDO LA CITY</h3>
-<p>Lluvia, neón y recuerdos.</p>
+<p>Lluvia y neón.</p>
 </div>
 
 <div class="track">
-<div class="track-number">14</div>
+<div class="number">14</div>
 <h3>NADIE NOS VIO</h3>
 <p>Amor escondido.</p>
 </div>
 
 <div class="track">
-<div class="track-number">15</div>
+<div class="number">15</div>
 <h3>KM DE DISTANCIA</h3>
-<p>Lejos pero pensando igual.</p>
+<p>Lejos pero cerca.</p>
 </div>
 
 <div class="track">
-<div class="track-number">16</div>
+<div class="number">16</div>
 <h3>POLAROID</h3>
-<p>Fotos que todavía hablan.</p>
+<p>Fotos del pasado.</p>
 </div>
 
 <div class="track">
-<div class="track-number">17</div>
+<div class="number">17</div>
 <h3>EL FINAL DEL VERANO</h3>
 <p>Cuando todo termina.</p>
 </div>
 
 <div class="track">
-<div class="track-number">18</div>
+<div class="number">18</div>
 <h3>TÚ + YO EN DICIEMBRE</h3>
 <p>El último recuerdo.</p>
 </div>
