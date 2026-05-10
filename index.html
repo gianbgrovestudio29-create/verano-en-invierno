@@ -1,26 +1,354 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>TEST</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VERANO EN INVIERNO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
 body{
-background:black;
+background:#050505;
 color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
-font-family:Arial;
+text-align:center;
+padding:20px;
+position:relative;
+overflow:hidden;
+
+background:
+linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.92)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
 }
+
+/* FUEGO */
+
+.fire{
+position:absolute;
+width:700px;
+opacity:.45;
+filter:drop-shadow(0 0 40px #008cff);
+animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0px);}
+}
+
+/* BLURS */
+
+.blur{
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(130px);
+opacity:.4;
+}
+
+.blur1{
+background:#ff0080;
+top:-150px;
+left:-150px;
+}
+
+.blur2{
+background:#0066ff;
+bottom:-150px;
+right:-150px;
+}
+
+/* CONTENT */
+
+.content{
+position:relative;
+z-index:10;
+max-width:1000px;
+}
+
+.domain{
+letter-spacing:8px;
+font-size:12px;
+color:#ff4da6;
+margin-bottom:20px;
+}
+
 h1{
-font-size:70px;
-color:#00aaff;
+font-size:120px;
+font-weight:900;
+line-height:.9;
+text-transform:uppercase;
+
+text-shadow:
+0 0 20px #ff0080,
+0 0 50px #0066ff;
 }
+
+h1 span{
+background:linear-gradient(90deg,#ff0080,#00ccff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+margin-top:30px;
+font-size:22px;
+color:#ddd;
+max-width:700px;
+margin-inline:auto;
+line-height:1.6;
+}
+
+.release{
+margin-top:40px;
+display:inline-block;
+padding:20px 45px;
+border-radius:25px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 0 30px rgba(255,0,128,.2);
+}
+
+.release p{
+font-size:12px;
+letter-spacing:4px;
+color:#ff4da6;
+}
+
+.release h2{
+margin-top:10px;
+font-size:42px;
+}
+
+/* BOTON */
+
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:18px 45px;
+border-radius:18px;
+background:linear-gradient(90deg,#ff0080,#7b00ff,#00ccff);
+color:white;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+box-shadow:0 0 35px rgba(0,204,255,.35);
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* TRACKS */
+
+.section{
+padding:110px 30px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+font-size:60px;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.section-text{
+font-size:18px;
+color:#999;
+max-width:700px;
+line-height:1.7;
+margin-bottom:60px;
+}
+
+.tracks{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.track{
+padding:25px;
+border-radius:25px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.track::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,
+rgba(255,0,128,.12),
+rgba(0,204,255,.12));
+opacity:0;
+transition:.3s;
+}
+
+.track:hover::before{
+opacity:1;
+}
+
+.track:hover{
+transform:translateY(-8px);
+border-color:#ff0080;
+box-shadow:0 0 30px rgba(0,204,255,.15);
+}
+
+.track span{
+font-size:12px;
+letter-spacing:3px;
+color:#666;
+}
+
+.track h3{
+margin-top:12px;
+font-size:24px;
+position:relative;
+z-index:2;
+}
+
+/* FOOTER */
+
+footer{
+padding:50px 20px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+color:#666;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+h1{
+font-size:65px;
+}
+
+.subtitle{
+font-size:18px;
+}
+
+.section-title{
+font-size:40px;
+}
+
+.release h2{
+font-size:28px;
+}
+
+.fire{
+width:350px;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
-<h1>VERANO EN INVIERNO 🔥</h1>
+<section class="hero">
+
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
+
+<img class="fire" src="https://pngimg.com/d/fire_PNG603.png">
+
+<div class="content">
+
+<p class="domain">
+VERANOENINVIERNO.VERCEL.APP
+</p>
+
+<h1>
+VERANO<br>
+<span>EN INVIERNO</span>
+</h1>
+
+<p class="subtitle">
+Perreo triste, playas vacías, fuego azul y recuerdos que todavía queman.
+</p>
+
+<div class="release">
+<p>LANZAMIENTO OFICIAL</p>
+<h2>04 / 06 / 2026</h2>
+</div>
+
+<br>
+
+<a href="#tracks" class="btn">
+ENTRAR AL UNIVERSO
+</a>
+
+</div>
+
+</section>
+
+<section class="section" id="tracks">
+
+<h2 class="section-title">
+TRACKLIST
+</h2>
+
+<p class="section-text">
+15 canciones entre el amor, el hielo y el fuego.
+</p>
+
+<div class="tracks">
+
+<div class="track"><span>01</span><h3>DOS CLIMAS</h3></div>
+<div class="track"><span>02</span><h3>VERANO EN INVIERNO</h3></div>
+<div class="track"><span>03</span><h3>+ FRÍO Q AYER</h3></div>
+<div class="track"><span>04</span><h3>NOCHES X LA PLAYA</h3></div>
+<div class="track"><span>05</span><h3>OJOS CANSADOS</h3></div>
+<div class="track"><span>06</span><h3>M NO MIENTAS</h3></div>
+<div class="track"><span>07</span><h3>CORA ROTO :)</h3></div>
+<div class="track"><span>08</span><h3>3ER OJO</h3></div>
+<div class="track"><span>09</span><h3>FLASHBACKS</h3></div>
+<div class="track"><span>10</span><h3>FUEGO AZUL</h3></div>
+<div class="track"><span>11</span><h3>MADRUGÁ</h3></div>
+<div class="track"><span>12</span><h3>X SI VUELVES</h3></div>
+<div class="track"><span>13</span><h3>MOJANDO LA CITY</h3></div>
+<div class="track"><span>14</span><h3>NADIE NOS VIO</h3></div>
+<div class="track"><span>15</span><h3>KM DE DISTANCIA</h3></div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 • DJ GIAN C & GROVE STUDIO
+</footer>
 
 </body>
 </html>
