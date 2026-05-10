@@ -6,6 +6,7 @@
 
 <title>VERANO EN INVIERNO</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -17,8 +18,12 @@ box-sizing:border-box;
 font-family:'Montserrat',sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-background:#050505;
+background:#030303;
 color:white;
 overflow-x:hidden;
 }
@@ -26,60 +31,71 @@ overflow-x:hidden;
 /* HERO */
 
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:40px 20px;
 position:relative;
 overflow:hidden;
 
 background:
-linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.92)),
-url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop');
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.88)),
+url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1970&auto=format&fit=crop');
 
 background-size:cover;
 background-position:center;
 }
 
-/* FUEGO */
+/* NEON */
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(circle at top left,
+rgba(255,0,128,.35),
+transparent 30%),
+
+radial-gradient(circle at bottom right,
+rgba(0,140,255,.35),
+transparent 30%);
+
+mix-blend-mode:screen;
+}
+
+/* FUEGO AZUL */
 
 .fire{
 position:absolute;
-width:700px;
-opacity:.45;
-filter:drop-shadow(0 0 40px #008cff);
-animation:float 5s ease-in-out infinite;
+width:650px;
+opacity:.42;
+z-index:1;
+
+filter:
+drop-shadow(0 0 30px #00aaff)
+drop-shadow(0 0 80px #0066ff);
+
+animation:floating 6s ease-in-out infinite;
 }
 
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0px);}
+@keyframes floating{
+
+0%{
+transform:translateY(0px);
 }
 
-/* BLURS */
-
-.blur{
-position:absolute;
-width:500px;
-height:500px;
-border-radius:50%;
-filter:blur(130px);
-opacity:.4;
+50%{
+transform:translateY(-25px);
 }
 
-.blur1{
-background:#ff0080;
-top:-150px;
-left:-150px;
+100%{
+transform:translateY(0px);
 }
 
-.blur2{
-background:#0066ff;
-bottom:-150px;
-right:-150px;
 }
 
 /* CONTENT */
@@ -90,26 +106,26 @@ z-index:10;
 max-width:1000px;
 }
 
-.domain{
-letter-spacing:8px;
+.small{
+letter-spacing:10px;
 font-size:12px;
 color:#ff4da6;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 h1{
-font-size:120px;
+font-size:145px;
 font-weight:900;
-line-height:.9;
+line-height:.85;
 text-transform:uppercase;
 
 text-shadow:
-0 0 20px #ff0080,
-0 0 50px #0066ff;
+0 0 15px #ff0080,
+0 0 45px #0066ff;
 }
 
 h1 span{
-background:linear-gradient(90deg,#ff0080,#00ccff);
+background:linear-gradient(90deg,#00aaff,#ffffff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -117,100 +133,156 @@ background:linear-gradient(90deg,#ff0080,#00ccff);
 .subtitle{
 margin-top:30px;
 font-size:22px;
-color:#ddd;
-max-width:700px;
+line-height:1.7;
+color:#d7d7d7;
+max-width:760px;
 margin-inline:auto;
-line-height:1.6;
+
+text-shadow:
+0 0 15px rgba(0,170,255,.35);
 }
 
+/* RELEASE */
+
 .release{
-margin-top:40px;
+margin-top:45px;
+
 display:inline-block;
-padding:20px 45px;
-border-radius:25px;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
+
+padding:22px 45px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(15px);
+
 border:1px solid rgba(255,255,255,.1);
-box-shadow:0 0 30px rgba(255,0,128,.2);
+
+box-shadow:
+0 0 30px rgba(255,0,128,.2),
+0 0 60px rgba(0,119,255,.12);
 }
 
 .release p{
 font-size:12px;
-letter-spacing:4px;
+letter-spacing:5px;
 color:#ff4da6;
 }
 
 .release h2{
-margin-top:10px;
 font-size:42px;
+margin-top:10px;
 }
 
 /* BOTON */
 
 .btn{
 display:inline-block;
+
 margin-top:35px;
+
 padding:18px 45px;
+
 border-radius:18px;
-background:linear-gradient(90deg,#ff0080,#7b00ff,#00ccff);
+
+background:linear-gradient(
+90deg,
+#ff0080,
+#7a00ff,
+#00aaff
+);
+
 color:white;
+
 font-weight:700;
+
 text-decoration:none;
+
 transition:.3s;
-box-shadow:0 0 35px rgba(0,204,255,.35);
+
+box-shadow:
+0 0 25px rgba(0,170,255,.3);
 }
 
 .btn:hover{
 transform:scale(1.05);
 }
 
-/* TRACKS */
+/* SECTION */
 
 .section{
-padding:110px 30px;
-max-width:1200px;
+padding:110px 25px;
+max-width:1300px;
 margin:auto;
 }
 
 .section-title{
-font-size:60px;
+font-size:65px;
 font-weight:900;
 margin-bottom:20px;
+
+text-shadow:
+0 0 20px rgba(255,0,128,.2);
 }
 
 .section-text{
-font-size:18px;
+max-width:760px;
+line-height:1.8;
 color:#999;
-max-width:700px;
-line-height:1.7;
+font-size:18px;
 margin-bottom:60px;
 }
+
+/* TRACKS */
 
 .tracks{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+gap:22px;
 }
 
 .track{
-padding:25px;
-border-radius:25px;
-background:rgba(255,255,255,.03);
-border:1px solid rgba(255,255,255,.08);
-transition:.3s;
 position:relative;
+
+padding:28px;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.04),
+rgba(255,255,255,.02)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
 overflow:hidden;
+
+transition:.35s;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 25px rgba(0,0,0,.45);
 }
 
 .track::before{
 content:'';
+
 position:absolute;
 inset:0;
-background:linear-gradient(90deg,
-rgba(255,0,128,.12),
-rgba(0,204,255,.12));
+
+background:
+linear-gradient(
+90deg,
+rgba(255,0,128,.15),
+rgba(0,170,255,.12)
+);
+
 opacity:0;
-transition:.3s;
+transition:.35s;
 }
 
 .track:hover::before{
@@ -218,15 +290,23 @@ opacity:1;
 }
 
 .track:hover{
-transform:translateY(-8px);
+
+transform:
+translateY(-8px)
+scale(1.02);
+
 border-color:#ff0080;
-box-shadow:0 0 30px rgba(0,204,255,.15);
+
+box-shadow:
+0 0 35px rgba(0,170,255,.18);
 }
 
 .track span{
 font-size:12px;
-letter-spacing:3px;
-color:#666;
+letter-spacing:4px;
+color:#6e6e6e;
+position:relative;
+z-index:2;
 }
 
 .track h3{
@@ -239,7 +319,7 @@ z-index:2;
 /* FOOTER */
 
 footer{
-padding:50px 20px;
+padding:55px 20px;
 text-align:center;
 border-top:1px solid rgba(255,255,255,.08);
 color:#666;
@@ -251,7 +331,7 @@ font-size:14px;
 @media(max-width:768px){
 
 h1{
-font-size:65px;
+font-size:70px;
 }
 
 .subtitle{
@@ -259,7 +339,7 @@ font-size:18px;
 }
 
 .section-title{
-font-size:40px;
+font-size:42px;
 }
 
 .release h2{
@@ -279,15 +359,12 @@ width:350px;
 
 <section class="hero">
 
-<div class="blur blur1"></div>
-<div class="blur blur2"></div>
-
 <img class="fire" src="https://pngimg.com/d/fire_PNG603.png">
 
 <div class="content">
 
-<p class="domain">
-VERANOENINVIERNO.VERCEL.APP
+<p class="small">
+DJ GIAN C & GROVE STUDIO
 </p>
 
 <h1>
@@ -296,12 +373,15 @@ VERANO<br>
 </h1>
 
 <p class="subtitle">
-Perreo triste, playas vacías, fuego azul y recuerdos que todavía queman.
+Perreo triste, playas vacías, fuego azul, recuerdos rotos y noches que todavía siguen ardiendo.
 </p>
 
 <div class="release">
+
 <p>LANZAMIENTO OFICIAL</p>
+
 <h2>04 / 06 / 2026</h2>
+
 </div>
 
 <br>
@@ -321,38 +401,53 @@ TRACKLIST
 </h2>
 
 <p class="section-text">
-15 canciones entre el amor, el hielo y el fuego.
+18 canciones entre el amor, el hielo, la playa y el fuego azul.
 </p>
 
 <div class="tracks">
 
 <div class="track"><span>01</span><h3>DOS CLIMAS</h3></div>
-<div class="track"><span>02</span><h3>VERANO EN INVIERNO</h3></div>
-<div class="track"><span>03</span><h3>+ FRÍO Q AYER</h3></div>
-<div class="track"><span>04</span><h3>NOCHES X LA PLAYA</h3></div>
-<div class="track"><span>05</span><h3>OJOS CANSADOS</h3></div>
-<div class="track"><span>06</span><h3>M NO MIENTAS</h3></div>
-<div class="track"><span>07</span><h3>CORA ROTO :)</h3></div>
-<div class="track"><span>08</span><h3>3ER OJO</h3></div>
-<div class="track"><span>09</span><h3>FLASHBACKS</h3></div>
-<div class="track"><span>10</span><h3>FUEGO AZUL</h3></div>
-<div class="track"><span>11</span><h3>MADRUGÁ</h3></div>
-<div class="track"><span>12</span><h3>X SI VUELVES</h3></div>
-<div class="track"><span>13</span><h3>MOJANDO LA CITY</h3></div>
-<div class="track"><span>14</span><h3>NADIE NOS VIO</h3></div>
-<div class="track"><span>15</span><h3>KM DE DISTANCIA</h3></div>
-<div class="track"><span>16</span><h3>POLAROID</h3></div>
-<div class="track"><span>17</span><h3>EL FINAL DEL VERANO</h3></div>
-<div class="track"><span>18</span><h3>TÚ + YO EN DICIEMBRE</h3></div>
 
-</div>
+<div class="track"><span>02</span><h3>VERANO EN INVIERNO</h3></div>
+
+<div class="track"><span>03</span><h3>+ FRÍO Q AYER</h3></div>
+
+<div class="track"><span>04</span><h3>NOCHES X LA PLAYA</h3></div>
+
+<div class="track"><span>05</span><h3>OJOS CANSADOS</h3></div>
+
+<div class="track"><span>06</span><h3>M NO MIENTAS</h3></div>
+
+<div class="track"><span>07</span><h3>CORA ROTO :)</h3></div>
+
+<div class="track"><span>08</span><h3>3ER OJO</h3></div>
+
+<div class="track"><span>09</span><h3>FLASHBACKS</h3></div>
+
+<div class="track"><span>10</span><h3>FUEGO AZUL</h3></div>
+
+<div class="track"><span>11</span><h3>MADRUGÁ</h3></div>
+
+<div class="track"><span>12</span><h3>X SI VUELVES</h3></div>
+
+<div class="track"><span>13</span><h3>MOJANDO LA CITY</h3></div>
+
+<div class="track"><span>14</span><h3>NADIE NOS VIO</h3></div>
+
+<div class="track"><span>15</span><h3>KM DE DISTANCIA</h3></div>
+
+<div class="track"><span>16</span><h3>POLAROID</h3></div>
+
+<div class="track"><span>17</span><h3>EL FINAL DEL VERANO</h3></div>
+
+<div class="track"><span>18</span><h3>TÚ + YO EN DICIEMBRE</h3></div>
 
 </div>
 
 </section>
 
 <footer>
-© 2026 • DJ GIAN C & GROVE STUDIO
+© 2026 • VERANO EN INVIERNO • DJ GIAN C & GROVE STUDIO
 </footer>
 
 </body>
