@@ -16,6 +16,10 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#050505;
 font-family:Arial, sans-serif;
@@ -34,23 +38,18 @@ padding:0 7%;
 overflow:hidden;
 
 background:
-linear-gradient(to right, rgba(0,0,0,.88) 18%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.55)),
-linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.2)),
+linear-gradient(to right,
+rgba(0,0,0,.92) 15%,
+rgba(0,0,0,.35) 55%,
+rgba(0,0,0,.65)),
+linear-gradient(to top,
+rgba(0,0,0,.95),
+rgba(0,0,0,.2)),
 url('cover1.jpg');
 
 background-size:cover;
-background-position:right center;
+background-position:70% center;
 background-repeat:no-repeat;
-}
-  
-/* sombra oscura */
-
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(1px);
 }
 
 /* luces neon */
@@ -81,11 +80,11 @@ right:-150px;
 
 .content{
 position:relative;
-z-index:3;
+z-index:2;
 max-width:700px;
 }
 
-/* texto arriba */
+/* TEXTO ARRIBA */
 
 .small{
 letter-spacing:10px;
@@ -105,37 +104,39 @@ margin-bottom:30px;
 
 .title .pink{
 display:block;
-font-size:170px;
+font-size:180px;
 color:#ff1493;
 
 text-shadow:
 0 0 15px #ff1493,
-0 0 35px #ff1493;
+0 0 40px #ff1493;
 }
 
 .title .blue{
 display:block;
-font-size:150px;
+font-size:160px;
 color:#38a9ff;
 
 text-shadow:
 0 0 15px #38a9ff,
-0 0 35px #38a9ff;
+0 0 40px #38a9ff;
 }
 
-/* descripcion */
+/* DESCRIPCION */
 
 .desc{
 font-family:'Caveat', cursive;
 font-size:30px;
-line-height:1.7;
+line-height:1.8;
 max-width:650px;
 margin-bottom:45px;
 color:white;
-text-shadow:0 0 10px rgba(0,0,0,.8);
+
+text-shadow:
+0 0 10px rgba(0,0,0,.9);
 }
 
-/* boton */
+/* BOTON */
 
 .btn{
 display:inline-block;
@@ -145,7 +146,8 @@ text-decoration:none;
 font-weight:bold;
 font-size:20px;
 
-background:linear-gradient(90deg,#ff008c,#2f7cff);
+background:
+linear-gradient(90deg,#ff008c,#2f7cff);
 
 color:white;
 
@@ -165,29 +167,42 @@ transform:scale(1.05);
 .tracklist{
 position:relative;
 padding:120px 7%;
-
-background:
-linear-gradient(to bottom, rgba(0,0,0,.75), rgba(0,0,0,.95)),
-url('cover1.jpg');
-
-background-size:cover;
-background-position:center bottom;
-background-repeat:no-repeat;
-background-attachment:fixed;
+background:#050505;
+overflow:hidden;
 }
-  
+
+/* fondo extendido */
+
 .tracklist::before{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(2px);
+
+background:
+linear-gradient(to bottom,
+rgba(0,0,0,.75),
+rgba(0,0,0,.95)),
+url('cover1.jpg');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+opacity:.45;
+
+filter:blur(2px) brightness(.6);
+
+transform:scale(1.1);
 }
+
+/* contenido */
 
 .track-content{
 position:relative;
 z-index:2;
 }
+
+/* TITULO TRACKLIST */
 
 .tracklist h2{
 font-family:'Bebas Neue';
@@ -201,13 +216,15 @@ text-shadow:
 0 0 20px #ff1493;
 }
 
-/* grid */
+/* GRID */
 
 .songs{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
+
+/* SONG CARD */
 
 .song{
 padding:22px;
@@ -234,7 +251,7 @@ box-shadow:
 0 0 20px rgba(255,20,147,.35);
 }
 
-/* footer */
+/* FOOTER */
 
 .footer{
 padding:40px;
