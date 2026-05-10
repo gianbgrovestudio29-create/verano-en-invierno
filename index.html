@@ -6,9 +6,7 @@
 
 <title>VERANO EN INVIERNO</title>
 
-<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/785/785116.png">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -20,244 +18,176 @@ font-family:'Montserrat',sans-serif;
 }
 
 body{
-background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.92)),
-url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop');
-
-background-size:cover;
-background-attachment:fixed;
-background-position:center;
+background:black;
 color:white;
 overflow-x:hidden;
 }
 
-body::before{
-content:'';
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top left,#ff008055,transparent 30%),
-radial-gradient(circle at bottom right,#0066ff55,transparent 30%);
-pointer-events:none;
-z-index:-1;
-}
-
+/* FONDO PRINCIPAL */
 .hero{
+position:relative;
 min-height:100vh;
+padding:60px;
 display:flex;
 align-items:center;
-justify-content:center;
-padding:80px 8%;
-gap:60px;
-flex-wrap:wrap;
-}
 
-.album-box{
-width:420px;
-position:relative;
-}
-
-.album-box img{
-width:100%;
-border-radius:25px;
-box-shadow:
-0 0 40px #ff008055,
-0 0 80px #0066ff33;
-border:1px solid rgba(255,255,255,.1);
-}
-
-.fire{
-position:absolute;
-inset:-30px;
 background:
-radial-gradient(circle,#0066ff55,transparent 70%);
-filter:blur(50px);
-z-index:-1;
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
+url("https://raw.githubusercontent.com/gianbgrovestudio29-crear/verano-en-invierno/main/fondo.jpg");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
 
-.hero-content{
+/* OSCURECER */
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(
+to bottom,
+rgba(0,0,0,.2),
+rgba(0,0,0,.7)
+);
+}
+
+/* CONTENIDO */
+.content{
+position:relative;
+z-index:2;
 max-width:700px;
 }
 
-.small{
-letter-spacing:8px;
-color:#ff4da6;
+/* TEXO ARRIBA */
+.top{
+letter-spacing:10px;
 font-size:13px;
-margin-bottom:20px;
+color:#ff2ea6;
+margin-bottom:25px;
 }
 
-.title{
-font-size:120px;
-line-height:.9;
+/* TITULO */
+h1{
+font-size:130px;
+line-height:.85;
 font-weight:900;
 text-transform:uppercase;
 }
 
 .pink{
-color:#ff0080;
-text-shadow:0 0 20px #ff0080;
+color:#ff1e8a;
+text-shadow:0 0 25px #ff0080;
 }
 
 .blue{
-color:#5ab7ff;
-text-shadow:0 0 25px #0066ff;
+color:#2ea6ff;
+text-shadow:0 0 25px #0077ff;
 }
 
-.info{
-display:flex;
-gap:60px;
-margin-top:35px;
-flex-wrap:wrap;
+/* SUB */
+.subtitle{
+margin-top:25px;
+font-size:22px;
+color:#ddd;
+line-height:1.7;
+max-width:600px;
 }
 
-.info div span{
-font-size:12px;
-color:#888;
-letter-spacing:4px;
-display:block;
-margin-bottom:8px;
-}
-
-.info div h3{
-font-size:28px;
-}
-
-.quote{
-margin-top:40px;
-font-size:24px;
-font-style:italic;
-color:#ff4da6;
-line-height:1.6;
-}
-
+/* BOTON */
 .btn{
 display:inline-block;
 margin-top:40px;
-padding:18px 40px;
+padding:20px 45px;
 border-radius:18px;
-background:linear-gradient(90deg,#ff0080,#0066ff);
 text-decoration:none;
-color:white;
 font-weight:700;
-box-shadow:0 0 25px #0066ff55;
+background:linear-gradient(90deg,#ff0080,#0077ff);
+color:white;
 transition:.3s;
+box-shadow:0 0 30px rgba(255,0,128,.4);
 }
 
 .btn:hover{
 transform:scale(1.05);
 }
 
+/* TRACKLIST */
 .section{
-padding:120px 8%;
+padding:120px 60px;
+background:#050505;
 }
 
 .section-title{
 font-size:70px;
-margin-bottom:20px;
 font-weight:900;
+margin-bottom:50px;
+color:white;
 }
 
-.about{
-max-width:900px;
-font-size:20px;
-line-height:2;
-color:#ddd;
-}
-
-.tracklist{
-margin-top:80px;
+.tracks{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:25px;
 }
 
 .track{
 padding:28px;
-border-radius:25px;
-background:rgba(255,255,255,.04);
+border-radius:24px;
+background:rgba(255,255,255,.03);
 border:1px solid rgba(255,255,255,.08);
 backdrop-filter:blur(10px);
 transition:.3s;
-position:relative;
-overflow:hidden;
-}
-
-.track::before{
-content:'';
-position:absolute;
-inset:0;
-background:linear-gradient(90deg,#ff008022,#0066ff22);
-opacity:0;
-transition:.3s;
-}
-
-.track:hover::before{
-opacity:1;
 }
 
 .track:hover{
-transform:translateY(-8px);
+transform:translateY(-5px);
 border-color:#ff0080;
-box-shadow:0 0 25px #ff008044;
+box-shadow:0 0 30px rgba(255,0,128,.15);
 }
 
 .track span{
+color:#ff0080;
 font-size:13px;
-color:#ff4da6;
 letter-spacing:3px;
 }
 
-.track h2{
-margin-top:12px;
-font-size:30px;
-position:relative;
-z-index:2;
+.track h3{
+margin-top:10px;
+font-size:26px;
 }
 
-.final{
-padding:150px 8%;
-text-align:center;
-}
-
-.final h1{
-font-size:100px;
-font-weight:900;
-line-height:1;
-margin-bottom:30px;
-}
-
-.final p{
-max-width:900px;
-margin:auto;
-font-size:22px;
-line-height:2;
-color:#ccc;
-}
-
+/* FOOTER */
 footer{
-padding:50px;
+padding:60px;
 text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-color:#666;
 font-size:14px;
+color:#777;
+background:black;
+border-top:1px solid rgba(255,255,255,.08);
 }
 
+/* RESPONSIVE */
 @media(max-width:900px){
 
-.title{
+.hero{
+padding:30px;
+}
+
+h1{
 font-size:70px;
+}
+
+.section{
+padding:80px 25px;
 }
 
 .section-title{
 font-size:45px;
 }
 
-.final h1{
-font-size:60px;
-}
-
-.hero{
-padding-top:120px;
+.subtitle{
+font-size:18px;
 }
 
 }
@@ -267,119 +197,84 @@ padding-top:120px;
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
 
-<div class="album-box">
-<div class="fire"></div>
+<div class="content">
 
-<img src="https://i.imgur.com/3RZ6dQB.jpeg">
+<div class="top">
+DJ GIAN C & GROVE STUDIO PRESENTAN
 </div>
 
-<div class="hero-content">
-
-<p class="small">
-DJ GIAN C & GROVE STUDIO PRESENTAN
-</p>
-
-<h1 class="title">
+<h1>
 <span class="pink">VERANO</span><br>
-<span class="blue">EN INVIERNO</span>
+<span class="blue">INVIERNO</span>
 </h1>
 
-<div class="info">
-
-<div>
-<span>ARTISTA</span>
-<h3>DJ GIAN C</h3>
-</div>
-
-<div>
-<span>PRODUCTOR</span>
-<h3>GROVE STUDIO</h3>
-</div>
-
-<div>
-<span>LANZAMIENTO</span>
-<h3>04/06/2026</h3>
-</div>
-
-</div>
-
-<p class="quote">
-“Dos climas, una historia, mil sentimientos.”
+<p class="subtitle">
+18 canciones inspiradas en noches largas, playas vacías,
+fuego azul, corazones rotos y recuerdos que todavía siguen vivos.
 </p>
 
 <a href="#tracks" class="btn">
-ENTRAR AL UNIVERSO
+ENTRAR AL ÁLBUM
 </a>
 
 </div>
 
 </section>
 
-<section class="section">
-
-<h1 class="section-title">
-SOBRE EL ÁLBUM
-</h1>
-
-<p class="about">
-Un viaje entre el calor y el frío.  
-Entre recuerdos que queman y noches que abrazan.  
-Este álbum mezcla reggaetón melancólico, trap latino, synth nocturno y emociones reales.  
-Inspirado en playas oscuras, relaciones rotas y madrugadas eternas.
-</p>
-
-</section>
-
+<!-- TRACKLIST -->
 <section class="section" id="tracks">
 
-<h1 class="section-title">
+<h2 class="section-title">
 TRACKLIST
-</h1>
+</h2>
 
-<div class="tracklist">
+<div class="tracks">
 
-<div class="track"><span>01</span><h2>DOS CLIMAS</h2></div>
-<div class="track"><span>02</span><h2>VERANO EN INVIERNO</h2></div>
-<div class="track"><span>03</span><h2>+ FRÍO Q AYER</h2></div>
-<div class="track"><span>04</span><h2>NOCHES X LA PLAYA</h2></div>
-<div class="track"><span>05</span><h2>OJOS CANSADOS</h2></div>
-<div class="track"><span>06</span><h2>M NO MIENTAS</h2></div>
-<div class="track"><span>07</span><h2>CORA ROTO :)</h2></div>
-<div class="track"><span>08</span><h2>3ER OJO</h2></div>
-<div class="track"><span>09</span><h2>FLASHBACKS</h2></div>
-<div class="track"><span>10</span><h2>FUEGO AZUL</h2></div>
-<div class="track"><span>11</span><h2>MADRUGÁ</h2></div>
-<div class="track"><span>12</span><h2>X SI VUELVES</h2></div>
-<div class="track"><span>13</span><h2>MOJANDO LA CITY</h2></div>
-<div class="track"><span>14</span><h2>NADIE NOS VIO</h2></div>
-<div class="track"><span>15</span><h2>KM DE DISTANCIA</h2></div>
-<div class="track"><span>16</span><h2>POLAROID</h2></div>
-<div class="track"><span>17</span><h2>EL FINAL DEL VERANO</h2></div>
-<div class="track"><span>18</span><h2>TÚ + YO EN DICIEMBRE</h2></div>
+<div class="track"><span>01</span><h3>DOS CLIMAS</h3></div>
+
+<div class="track"><span>02</span><h3>VERANO EN INVIERNO</h3></div>
+
+<div class="track"><span>03</span><h3>+ FRÍO Q AYER</h3></div>
+
+<div class="track"><span>04</span><h3>NOCHES X LA PLAYA</h3></div>
+
+<div class="track"><span>05</span><h3>OJOS CANSADOS</h3></div>
+
+<div class="track"><span>06</span><h3>M NO MIENTAS</h3></div>
+
+<div class="track"><span>07</span><h3>CORA ROTO :)</h3></div>
+
+<div class="track"><span>08</span><h3>3ER OJO</h3></div>
+
+<div class="track"><span>09</span><h3>FLASHBACKS</h3></div>
+
+<div class="track"><span>10</span><h3>FUEGO AZUL</h3></div>
+
+<div class="track"><span>11</span><h3>MADRUGÁ</h3></div>
+
+<div class="track"><span>12</span><h3>X SI VUELVES</h3></div>
+
+<div class="track"><span>13</span><h3>MOJANDO LA CITY</h3></div>
+
+<div class="track"><span>14</span><h3>NADIE NOS VIO</h3></div>
+
+<div class="track"><span>15</span><h3>KM DE DISTANCIA</h3></div>
+
+<div class="track"><span>16</span><h3>POLAROID</h3></div>
+
+<div class="track"><span>17</span><h3>EL FINAL DEL VERANO</h3></div>
+
+<div class="track"><span>18</span><h3>TÚ + YO EN DICIEMBRE</h3></div>
 
 </div>
 
 </section>
 
-<section class="final">
-
-<h1>
-<span class="pink">VERANO</span><br>
-<span class="blue">EN INVIERNO</span>
-</h1>
-
-<p>
-Noches largas.  
-Fuego azul.  
-Recuerdos que todavía siguen vivos frente al mar.
-</p>
-
-</section>
-
 <footer>
-© 2026 • DJ GIAN C • GROVE STUDIO
+© 2026 • VERANO EN INVIERNO • DJ GIAN C & GROVE STUDIO
 </footer>
 
 </body>
