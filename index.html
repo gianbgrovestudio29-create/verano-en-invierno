@@ -18,83 +18,107 @@ font-family:'Montserrat',sans-serif;
 }
 
 body{
-background:black;
-color:white;
+background:#020202;
 overflow-x:hidden;
+color:white;
 }
 
-/* FONDO PRINCIPAL */
+/* HERO */
+
 .hero{
 position:relative;
 min-height:100vh;
-padding:60px;
 display:flex;
 align-items:center;
+padding:80px;
 
 background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
-url("https://raw.githubusercontent.com/gianbgrovestudio29-crear/verano-en-invierno/main/fondo.jpg");
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.85)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop');
 
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
+overflow:hidden;
 }
 
-/* OSCURECER */
-.hero::before{
-content:'';
+/* PERSONAJE */
+
+.character{
 position:absolute;
-inset:0;
-background:linear-gradient(
-to bottom,
-rgba(0,0,0,.2),
-rgba(0,0,0,.7)
-);
+right:0;
+bottom:0;
+height:95%;
+z-index:2;
+
+filter:
+drop-shadow(0 0 30px #0066ff)
+drop-shadow(0 0 60px #ff0080);
+
+animation:float 5s ease-in-out infinite;
+}
+
+/* FUEGO */
+
+.blue-fire{
+position:absolute;
+right:8%;
+bottom:5%;
+width:550px;
+height:550px;
+border-radius:50%;
+
+background:
+radial-gradient(circle,
+rgba(0,153,255,.9) 0%,
+rgba(0,153,255,.35) 35%,
+transparent 70%);
+
+filter:blur(60px);
+z-index:1;
+
+animation:pulse 4s infinite;
 }
 
 /* CONTENIDO */
+
 .content{
 position:relative;
-z-index:2;
+z-index:5;
 max-width:700px;
 }
 
-/* TEXO ARRIBA */
 .top{
 letter-spacing:10px;
 font-size:13px;
-color:#ff2ea6;
+color:#ff2e92;
 margin-bottom:25px;
 }
 
-/* TITULO */
 h1{
-font-size:130px;
+font-size:120px;
 line-height:.85;
 font-weight:900;
 text-transform:uppercase;
 }
 
 .pink{
-color:#ff1e8a;
-text-shadow:0 0 25px #ff0080;
+color:#ff0a7a;
+text-shadow:0 0 30px #ff0080;
 }
 
 .blue{
 color:#2ea6ff;
-text-shadow:0 0 25px #0077ff;
+text-shadow:0 0 30px #0080ff;
 }
 
-/* SUB */
 .subtitle{
-margin-top:25px;
+margin-top:30px;
 font-size:22px;
-color:#ddd;
 line-height:1.7;
+color:#e2e2e2;
 max-width:600px;
 }
 
-/* BOTON */
 .btn{
 display:inline-block;
 margin-top:40px;
@@ -102,10 +126,10 @@ padding:20px 45px;
 border-radius:18px;
 text-decoration:none;
 font-weight:700;
-background:linear-gradient(90deg,#ff0080,#0077ff);
+background:linear-gradient(90deg,#ff0080,#0066ff);
 color:white;
-transition:.3s;
 box-shadow:0 0 30px rgba(255,0,128,.4);
+transition:.3s;
 }
 
 .btn:hover{
@@ -113,6 +137,7 @@ transform:scale(1.05);
 }
 
 /* TRACKLIST */
+
 .section{
 padding:120px 60px;
 background:#050505;
@@ -122,34 +147,41 @@ background:#050505;
 font-size:70px;
 font-weight:900;
 margin-bottom:50px;
-color:white;
 }
 
 .tracks{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 }
 
 .track{
 padding:28px;
 border-radius:24px;
-background:rgba(255,255,255,.03);
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.04),
+rgba(255,255,255,.02)
+);
+
 border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
+
 transition:.3s;
+backdrop-filter:blur(10px);
 }
 
 .track:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 border-color:#ff0080;
-box-shadow:0 0 30px rgba(255,0,128,.15);
+box-shadow:0 0 25px rgba(255,0,128,.2);
 }
 
 .track span{
-color:#ff0080;
 font-size:13px;
 letter-spacing:3px;
+color:#ff0080;
 }
 
 .track h3{
@@ -158,6 +190,7 @@ font-size:26px;
 }
 
 /* FOOTER */
+
 footer{
 padding:60px;
 text-align:center;
@@ -167,15 +200,62 @@ background:black;
 border-top:1px solid rgba(255,255,255,.08);
 }
 
+/* ANIMACIONES */
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+opacity:.8;
+}
+
+50%{
+transform:scale(1.08);
+opacity:1;
+}
+
+100%{
+transform:scale(1);
+opacity:.8;
+}
+
+}
+
 /* RESPONSIVE */
-@media(max-width:900px){
+
+@media(max-width:1000px){
 
 .hero{
-padding:30px;
+padding:40px;
+}
+
+.character{
+opacity:.35;
+height:80%;
 }
 
 h1{
 font-size:70px;
+}
+
+.subtitle{
+font-size:18px;
 }
 
 .section{
@@ -186,10 +266,6 @@ padding:80px 25px;
 font-size:45px;
 }
 
-.subtitle{
-font-size:18px;
-}
-
 }
 
 </style>
@@ -198,8 +274,20 @@ font-size:18px;
 <body>
 
 <!-- HERO -->
+
 <section class="hero">
 
+<!-- FUEGO -->
+<div class="blue-fire"></div>
+
+<!-- PERSONAJE -->
+<img
+class="character"
+src="https://pngimg.com/d/superhero_PNG82.png"
+alt=""
+>
+
+<!-- CONTENIDO -->
 <div class="content">
 
 <div class="top">
@@ -212,8 +300,9 @@ DJ GIAN C & GROVE STUDIO PRESENTAN
 </h1>
 
 <p class="subtitle">
-18 canciones inspiradas en noches largas, playas vacías,
-fuego azul, corazones rotos y recuerdos que todavía siguen vivos.
+18 canciones inspiradas en playas vacías,
+madrugadas eternas, fuego azul,
+amores rotos y recuerdos que nunca murieron.
 </p>
 
 <a href="#tracks" class="btn">
@@ -225,6 +314,7 @@ ENTRAR AL ÁLBUM
 </section>
 
 <!-- TRACKLIST -->
+
 <section class="section" id="tracks">
 
 <h2 class="section-title">
