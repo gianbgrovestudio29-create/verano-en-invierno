@@ -1,180 +1,382 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VERANO EN INVIERNO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERANO EN INVIERNO</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, Helvetica, sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
-    body{
-      background:black;
-      color:white;
-      overflow-x:hidden;
-    }
+<style>
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:40px;
-      background:
-      radial-gradient(circle at top left, rgba(0,255,255,0.2), transparent 30%),
-      radial-gradient(circle at bottom right, rgba(0,100,255,0.2), transparent 30%),
-      black;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
 
-    h1{
-      font-size:90px;
-      line-height:0.9;
-      font-weight:900;
-    }
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
 
-    h1 span{
-      color:#00d9ff;
-    }
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+position:relative;
+overflow:hidden;
+background:
+radial-gradient(circle at top left, rgba(255,0,128,.25), transparent 30%),
+radial-gradient(circle at bottom right, rgba(0,153,255,.25), transparent 30%),
+linear-gradient(to bottom,#000,#050505);
+}
 
-    .subtitle{
-      margin-top:20px;
-      color:#aaa;
-      font-size:22px;
-    }
+.blur{
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(120px);
+opacity:.4;
+}
 
-    .date{
-      margin-top:35px;
-      display:inline-block;
-      padding:18px 30px;
-      border:1px solid rgba(0,217,255,.4);
-      border-radius:20px;
-      background:rgba(0,217,255,.1);
-    }
+.blur1{
+background:#ff0080;
+top:-150px;
+left:-150px;
+}
 
-    .date h2{
-      font-size:35px;
-      margin-top:5px;
-    }
+.blur2{
+background:#0066ff;
+bottom:-150px;
+right:-150px;
+}
 
-    .btn{
-      margin-top:30px;
-      display:inline-block;
-      padding:16px 35px;
-      background:#00d9ff;
-      color:black;
-      border-radius:18px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:.3s;
-    }
+.content{
+position:relative;
+z-index:10;
+max-width:1000px;
+}
 
-    .btn:hover{
-      transform:scale(1.05);
-    }
+.domain{
+letter-spacing:10px;
+font-size:12px;
+color:#ff4da6;
+margin-bottom:20px;
+}
 
-    .tracks{
-      padding:100px 30px;
-      max-width:1000px;
-      margin:auto;
-    }
+h1{
+font-size:110px;
+font-weight:900;
+line-height:.9;
+text-transform:uppercase;
+}
 
-    .tracks h2{
-      font-size:50px;
-      margin-bottom:40px;
-    }
+h1 span{
+background:linear-gradient(90deg,#ff0080,#00ccff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-    .song{
-      border:1px solid rgba(255,255,255,.1);
-      padding:20px;
-      margin-bottom:15px;
-      border-radius:20px;
-      transition:.3s;
-    }
+.subtitle{
+margin-top:30px;
+font-size:22px;
+color:#aaa;
+max-width:700px;
+margin-inline:auto;
+line-height:1.6;
+}
 
-    .song:hover{
-      border-color:#00d9ff;
-      background:rgba(0,217,255,.05);
-    }
+.release{
+margin-top:40px;
+display:inline-block;
+padding:20px 40px;
+border:1px solid rgba(255,255,255,.15);
+border-radius:25px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+}
 
-    footer{
-      text-align:center;
-      padding:40px;
-      color:#666;
-      border-top:1px solid rgba(255,255,255,.1);
-    }
+.release p{
+font-size:13px;
+letter-spacing:4px;
+color:#ff4da6;
+}
 
-    @media(max-width:700px){
-      h1{
-        font-size:55px;
-      }
+.release h2{
+margin-top:8px;
+font-size:42px;
+}
 
-      .tracks h2{
-        font-size:35px;
-      }
-    }
-  </style>
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:18px 40px;
+border-radius:20px;
+background:linear-gradient(90deg,#ff0080,#00ccff);
+color:white;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+box-shadow:0 0 30px rgba(0,204,255,.3);
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.socials{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+color:#777;
+font-size:14px;
+letter-spacing:3px;
+}
+
+.section{
+padding:120px 30px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+font-size:60px;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.section-text{
+color:#999;
+font-size:18px;
+max-width:700px;
+line-height:1.8;
+margin-bottom:60px;
+}
+
+.tracks{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.track{
+padding:25px;
+border-radius:25px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.track::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,rgba(255,0,128,.15),rgba(0,204,255,.1));
+opacity:0;
+transition:.3s;
+}
+
+.track:hover::before{
+opacity:1;
+}
+
+.track:hover{
+transform:translateY(-5px);
+border-color:#ff0080;
+}
+
+.track span{
+font-size:12px;
+color:#777;
+letter-spacing:3px;
+}
+
+.track h3{
+margin-top:10px;
+font-size:22px;
+position:relative;
+z-index:2;
+}
+
+footer{
+padding:50px 20px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+color:#666;
+font-size:14px;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:65px;
+}
+
+.section-title{
+font-size:42px;
+}
+
+.subtitle{
+font-size:18px;
+}
+
+.release h2{
+font-size:28px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <section class="hero">
-  <div>
-    <p style="letter-spacing:8px;color:#00d9ff;">
-      www.veranoeninvierno.pe.com
-    </p>
 
-    <h1>
-      VERANO<br>
-      <span>EN INVIERNO</span>
-    </h1>
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
 
-    <p class="subtitle">
-      Noches frías, playas vacías y recuerdos que todavía queman.
-    </p>
+<div class="content">
 
-    <div class="date">
-      <p>LANZAMIENTO OFICIAL</p>
-      <h2>04 / 06 / 2026</h2>
-    </div>
+<p class="domain">
+WWW.VERANOENINVIERNO.PE.COM
+</p>
 
-    <br>
+<h1>
+VERANO<br>
+<span>EN INVIERNO</span>
+</h1>
 
-    <a href="#" class="btn">
-      ESCUCHAR TRAILER
-    </a>
-  </div>
+<p class="subtitle">
+Perreo triste, luces de neón, madrugadas sin dormir y recuerdos que todavía queman frente al mar.
+</p>
+
+<div class="release">
+<p>LANZAMIENTO OFICIAL</p>
+<h2>04 / 06 / 2026</h2>
+</div>
+
+<br>
+
+<a href="#" class="btn">
+ENTRAR AL UNIVERSO
+</a>
+
+<div class="socials">
+<span>SPOTIFY</span>
+<span>YOUTUBE</span>
+<span>TIKTOK</span>
+<span>APPLE MUSIC</span>
+</div>
+
+</div>
+
 </section>
 
-<section class="tracks">
+<section class="section">
 
-  <h2>TRACKLIST</h2>
+<h2 class="section-title">
+15 CANCIONES
+</h2>
 
-  <div class="song">01 — DOS CLIMAS</div>
-  <div class="song">02 — VERANO EN INVIERNO</div>
-  <div class="song">03 — + FRÍO Q AYER</div>
-  <div class="song">04 — NOCHES X LA PLAYA</div>
-  <div class="song">05 — OJOS CANSADOS</div>
-  <div class="song">06 — M NO MIENTAS</div>
-  <div class="song">07 — CORA ROTO :)</div>
-  <div class="song">08 — 3ER OJO</div>
-  <div class="song">09 — FLASHBACKS</div>
-  <div class="song">10 — FUEGO AZUL</div>
-  <div class="song">11 — MADRUGÁ</div>
-  <div class="song">12 — X SI VUELVES</div>
-  <div class="song">13 — MOJANDO LA CITY</div>
-  <div class="song">14 — NADIE NOS VIO</div>
-  <div class="song">15 — KM DE DISTANCIA</div>
+<p class="section-text">
+Reggaetón melancólico, trap latino y sonidos nocturnos inspirados en playas vacías, amores rotos y fiestas que nunca terminan.
+</p>
+
+<div class="tracks">
+
+<div class="track">
+<span>01</span>
+<h3>DOS CLIMAS</h3>
+</div>
+
+<div class="track">
+<span>02</span>
+<h3>VERANO EN INVIERNO</h3>
+</div>
+
+<div class="track">
+<span>03</span>
+<h3>+ FRÍO Q AYER</h3>
+</div>
+
+<div class="track">
+<span>04</span>
+<h3>NOCHES X LA PLAYA</h3>
+</div>
+
+<div class="track">
+<span>05</span>
+<h3>OJOS CANSADOS</h3>
+</div>
+
+<div class="track">
+<span>06</span>
+<h3>M NO MIENTAS</h3>
+</div>
+
+<div class="track">
+<span>07</span>
+<h3>CORA ROTO :)</h3>
+</div>
+
+<div class="track">
+<span>08</span>
+<h3>3ER OJO</h3>
+</div>
+
+<div class="track">
+<span>09</span>
+<h3>FLASHBACKS</h3>
+</div>
+
+<div class="track">
+<span>10</span>
+<h3>FUEGO AZUL</h3>
+</div>
+
+<div class="track">
+<span>11</span>
+<h3>MADRUGÁ</h3>
+</div>
+
+<div class="track">
+<span>12</span>
+<h3>X SI VUELVES</h3>
+</div>
+
+<div class="track">
+<span>13</span>
+<h3>MOJANDO LA CITY</h3>
+</div>
+
+<div class="track">
+<span>14</span>
+<h3>NADIE NOS VIO</h3>
+</div>
+
+<div class="track">
+<span>15</span>
+<h3>KM DE DISTANCIA</h3>
+</div>
+
+</div>
 
 </section>
 
 <footer>
-  © 2026 VERANO EN INVIERNO
+© 2026 • VERANO EN INVIERNO
 </footer>
 
 </body>
