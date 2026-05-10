@@ -1,4 +1,3 @@
-```html id="6d9k2q"
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,29 +27,26 @@ overflow-x:hidden;
 /* HERO */
 
 .hero{
-height:100vh;
-width:100%;
 position:relative;
+height:100vh;
 display:flex;
 align-items:center;
-padding-left:7%;
-overflow:hidden;
+padding:0 7%;
 
 background:
-linear-gradient(to right,rgba(0,0,0,.72),rgba(0,0,0,.25)),
+linear-gradient(to right,rgba(0,0,0,.88),rgba(0,0,0,.45),rgba(0,0,0,.2)),
 url('cover1.jpg');
 
 background-size:cover;
-background-position:center right;
+background-position:85% center;
 background-repeat:no-repeat;
 }
 
 .hero::after{
-content:"";
+content:'';
 position:absolute;
 inset:0;
-background:
-linear-gradient(to bottom,transparent,rgba(0,0,0,.75));
+background:linear-gradient(to top,#000 0%,transparent 30%);
 }
 
 .hero-content{
@@ -61,7 +57,7 @@ max-width:760px;
 
 .top{
 font-size:12px;
-letter-spacing:12px;
+letter-spacing:10px;
 color:#ff1493;
 margin-bottom:25px;
 text-transform:uppercase;
@@ -69,12 +65,12 @@ text-transform:uppercase;
 
 .title{
 line-height:.82;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
 .title span{
 display:block;
-font-size:clamp(90px,12vw,210px);
+font-size:clamp(80px,12vw,210px);
 font-weight:900;
 text-transform:uppercase;
 }
@@ -87,44 +83,87 @@ text-shadow:
 }
 
 .blue{
-color:#3da4ff;
+color:#3ea6ff;
 text-shadow:
-0 0 20px #3da4ff,
-0 0 60px #3da4ff;
+0 0 20px #3ea6ff,
+0 0 60px #3ea6ff;
 }
 
 .desc{
-font-size:clamp(20px,2vw,34px);
-line-height:1.7;
-max-width:700px;
-color:#f2f2f2;
+font-size:clamp(18px,2vw,30px);
+line-height:1.8;
+max-width:650px;
 margin-bottom:45px;
+color:#f1f1f1;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:22px 48px;
-border-radius:60px;
-background:linear-gradient(90deg,#ff1493,#2563ff);
-text-decoration:none;
-color:white;
+padding:18px 40px;
+border-radius:100px;
 font-weight:700;
-font-size:18px;
-box-shadow:0 0 30px rgba(255,20,147,.45);
+text-decoration:none;
 transition:.3s;
 }
 
-.btn:hover{
-transform:scale(1.05);
+.btn-main{
+background:linear-gradient(90deg,#ff008c,#2f7bff);
+color:white;
+box-shadow:0 0 30px rgba(255,0,140,.5);
+}
+
+.btn-main:hover{
+transform:translateY(-4px) scale(1.03);
+}
+
+.btn-outline{
+border:2px solid rgba(255,255,255,.25);
+color:white;
+backdrop-filter:blur(10px);
+}
+
+.btn-outline:hover{
+background:white;
+color:black;
+}
+
+/* GLOW */
+
+.glow{
+position:absolute;
+border-radius:50%;
+filter:blur(120px);
+opacity:.4;
+}
+
+.glow1{
+width:350px;
+height:350px;
+background:#ff008c;
+left:-100px;
+top:0;
+}
+
+.glow2{
+width:400px;
+height:400px;
+background:#0066ff;
+right:-100px;
+bottom:0;
 }
 
 /* TRACKLIST */
 
-.album{
-position:relative;
-padding:130px 8%;
+.track-section{
+padding:140px 8%;
+
 background:
-linear-gradient(to bottom,rgba(0,0,0,.75),rgba(0,0,0,.92)),
+linear-gradient(to bottom,rgba(0,0,0,.82),rgba(0,0,0,.95)),
 url('cover2.jpg');
 
 background-size:cover;
@@ -132,103 +171,169 @@ background-position:right center;
 background-attachment:fixed;
 }
 
-.album::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(2px);
-}
-
-.album-content{
-position:relative;
-z-index:2;
-}
-
-.album-title{
-font-size:75px;
+.section-title{
+text-align:center;
+font-size:70px;
+margin-bottom:70px;
 font-weight:900;
-margin-bottom:20px;
 text-transform:uppercase;
 }
 
-.album-sub{
-font-size:20px;
-letter-spacing:5px;
+.section-title span{
 color:#ff1493;
-margin-bottom:70px;
 }
 
-.tracks{
+.track-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
 .track{
-background:rgba(0,0,0,.45);
+background:rgba(255,255,255,.05);
 border:1px solid rgba(255,255,255,.08);
-padding:25px;
-border-radius:24px;
+padding:28px;
+border-radius:28px;
 backdrop-filter:blur(12px);
-transition:.3s;
+transition:.35s;
 }
 
 .track:hover{
 transform:translateY(-8px);
 border-color:#ff1493;
-box-shadow:0 0 25px rgba(255,20,147,.25);
 }
 
-.number{
+.track-number{
 font-size:13px;
-letter-spacing:3px;
-margin-bottom:12px;
 color:#ff1493;
+margin-bottom:10px;
+font-weight:700;
+letter-spacing:3px;
 }
 
 .track h3{
-font-size:27px;
+font-size:28px;
 margin-bottom:10px;
 }
 
 .track p{
-color:#d1d1d1;
-line-height:1.6;
+color:#d0d0d0;
+line-height:1.7;
+}
+
+/* STORY */
+
+.story{
+padding:160px 8%;
+background:#050505;
+}
+
+.story-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.story img{
+width:100%;
+border-radius:35px;
+box-shadow:0 0 50px rgba(0,0,0,.7);
+}
+
+.story h2{
+font-size:70px;
+line-height:1;
+margin-bottom:30px;
+}
+
+.story h2 span{
+color:#3ea6ff;
+}
+
+.story p{
+font-size:20px;
+line-height:2;
+color:#d6d6d6;
+margin-bottom:20px;
+}
+
+.quote{
+font-size:28px;
+font-weight:700;
+color:#ff1493;
+margin-top:30px;
+}
+
+/* STREAM */
+
+.stream{
+padding:140px 8%;
+background:linear-gradient(180deg,#050505,#000814);
+text-align:center;
+}
+
+.stream h2{
+font-size:80px;
+margin-bottom:20px;
+}
+
+.stream p{
+font-size:22px;
+max-width:850px;
+margin:auto;
+line-height:1.9;
+color:#d0d0d0;
+margin-bottom:50px;
+}
+
+.platforms{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.platform{
+padding:20px 40px;
+border-radius:100px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+font-weight:700;
+transition:.3s;
+}
+
+.platform:hover{
+transform:scale(1.05);
+background:linear-gradient(90deg,#ff008c,#2f7bff);
 }
 
 /* FOOTER */
 
 footer{
-padding:70px 8%;
+padding:80px 8%;
 text-align:center;
-background:#050505;
+background:black;
 border-top:1px solid rgba(255,255,255,.08);
 }
 
-footer h2{
-font-size:60px;
-font-weight:900;
+footer h3{
+font-size:50px;
 margin-bottom:15px;
 }
 
 footer p{
-color:#999;
+color:#9f9f9f;
 line-height:1.8;
 }
 
 /* MOBILE */
 
-@media(max-width:768px){
+@media(max-width:900px){
 
 .hero{
-padding:40px;
-background-position:70% center;
-}
-
-.top{
-font-size:10px;
-letter-spacing:5px;
+padding:120px 7% 80px;
+background-position:72% center;
 }
 
 .title span{
@@ -236,21 +341,22 @@ font-size:80px;
 }
 
 .desc{
-font-size:20px;
+font-size:18px;
 }
 
-.album-title{
+.story-wrapper{
+grid-template-columns:1fr;
+}
+
+.story h2,
+.stream h2,
+.section-title{
 font-size:45px;
 }
 
-.album-sub{
-font-size:15px;
-line-height:1.7;
-}
-
-.btn{
-padding:18px 35px;
-font-size:15px;
+.story p,
+.stream p{
+font-size:18px;
 }
 
 }
@@ -262,155 +368,218 @@ font-size:15px;
 
 <section class="hero">
 
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
 <div class="hero-content">
 
 <div class="top">
 DJ GIAN C & GROVE STUDIO PRESENTAN
 </div>
 
-<div class="title">
+<h1 class="title">
 <span class="pink">VERANO</span>
 <span class="blue">INVIERNO</span>
-</div>
+</h1>
 
-<div class="desc">
+<p class="desc">
 18 canciones inspiradas en playas vacías,
 fuego azul, madrugadas eternas,
 corazones rotos y recuerdos
 que todavía siguen vivos.
-</div>
+</p>
 
-<a href="#album" class="btn">
+<div class="buttons">
+
+<a href="#tracks" class="btn btn-main">
 ENTRAR AL ÁLBUM
 </a>
+
+<a href="#story" class="btn btn-outline">
+VER HISTORIA
+</a>
+
+</div>
 
 </div>
 
 </section>
 
-<section class="album" id="album">
+<section class="track-section" id="tracks">
 
-<div class="album-content">
-
-<h2 class="album-title">
-TRACKLIST
+<h2 class="section-title">
+TRACK<span>LIST</span>
 </h2>
 
-<div class="album-sub">
-DOS CLIMAS • UNA HISTORIA • MIL SENTIMIENTOS
-</div>
-
-<div class="tracks">
+<div class="track-grid">
 
 <div class="track">
-<div class="number">01</div>
+<div class="track-number">01</div>
 <h3>DOS CLIMAS</h3>
-<p>El inicio del viaje.</p>
+<p>Una intro melancólica entre el calor y el frío.</p>
 </div>
 
 <div class="track">
-<div class="number">02</div>
+<div class="track-number">02</div>
 <h3>VERANO EN INVIERNO</h3>
-<p>Calor y frío chocando.</p>
+<p>El corazón roto convertido en fiesta.</p>
 </div>
 
 <div class="track">
-<div class="number">03</div>
+<div class="track-number">03</div>
 <h3>+ FRÍO Q AYER</h3>
-<p>La distancia duele más.</p>
+<p>La distancia duele más de noche.</p>
 </div>
 
 <div class="track">
-<div class="number">04</div>
+<div class="track-number">04</div>
 <h3>NOCHES X LA PLAYA</h3>
-<p>Recuerdos bajo la luna.</p>
+<p>Reggaetón oscuro y nostalgia.</p>
 </div>
 
 <div class="track">
-<div class="number">05</div>
+<div class="track-number">05</div>
 <h3>OJOS CANSADOS</h3>
 <p>No dormir pensando en ti.</p>
 </div>
 
 <div class="track">
-<div class="number">06</div>
+<div class="track-number">06</div>
 <h3>M NO MIENTAS</h3>
-<p>Promesas rotas.</p>
+<p>Promesas que nunca volvieron.</p>
 </div>
 
 <div class="track">
-<div class="number">07</div>
+<div class="track-number">07</div>
 <h3>CORA ROTO :)</h3>
 <p>Sonriendo aunque duela.</p>
 </div>
 
 <div class="track">
-<div class="number">08</div>
+<div class="track-number">08</div>
 <h3>3ER OJO</h3>
-<p>Mirando más allá.</p>
+<p>Mirando más allá del amor.</p>
 </div>
 
 <div class="track">
-<div class="number">09</div>
+<div class="track-number">09</div>
 <h3>FLASHBACKS</h3>
-<p>Todo vuelve.</p>
+<p>Recuerdos que vuelven.</p>
 </div>
 
 <div class="track">
-<div class="number">10</div>
+<div class="track-number">10</div>
 <h3>FUEGO AZUL</h3>
-<p>Pasión distinta.</p>
+<p>Pasión que quema distinto.</p>
 </div>
 
 <div class="track">
-<div class="number">11</div>
+<div class="track-number">11</div>
 <h3>MADRUGÁ</h3>
-<p>Historias a las 3AM.</p>
+<p>Historias después de las 3AM.</p>
 </div>
 
 <div class="track">
-<div class="number">12</div>
+<div class="track-number">12</div>
 <h3>X SI VUELVES</h3>
 <p>Esperando lo imposible.</p>
 </div>
 
 <div class="track">
-<div class="number">13</div>
+<div class="track-number">13</div>
 <h3>MOJANDO LA CITY</h3>
-<p>Lluvia y neón.</p>
+<p>Lluvia, neón y recuerdos.</p>
 </div>
 
 <div class="track">
-<div class="number">14</div>
+<div class="track-number">14</div>
 <h3>NADIE NOS VIO</h3>
 <p>Amor escondido.</p>
 </div>
 
 <div class="track">
-<div class="number">15</div>
+<div class="track-number">15</div>
 <h3>KM DE DISTANCIA</h3>
-<p>Lejos pero cerca.</p>
+<p>Lejos pero pensando igual.</p>
 </div>
 
 <div class="track">
-<div class="number">16</div>
+<div class="track-number">16</div>
 <h3>POLAROID</h3>
-<p>Fotos del pasado.</p>
+<p>Fotos que todavía hablan.</p>
 </div>
 
 <div class="track">
-<div class="number">17</div>
+<div class="track-number">17</div>
 <h3>EL FINAL DEL VERANO</h3>
 <p>Cuando todo termina.</p>
 </div>
 
 <div class="track">
-<div class="number">18</div>
+<div class="track-number">18</div>
 <h3>TÚ + YO EN DICIEMBRE</h3>
 <p>El último recuerdo.</p>
 </div>
 
 </div>
+
+</section>
+
+<section class="story" id="story">
+
+<div class="story-wrapper">
+
+<div>
+<img src="cover2.jpg">
+</div>
+
+<div>
+
+<h2>
+DOS CLIMAS <span>UNA HISTORIA</span>
+</h2>
+
+<p>
+Este álbum mezcla el calor de una playa de madrugada
+con el frío que deja una despedida.
+</p>
+
+<p>
+Inspirado en sonidos urbanos, synths oscuros,
+reggaetón melancólico y visuales neon.
+</p>
+
+<p>
+Cada canción se siente como manejar solo por la costa
+a las 3AM mientras los recuerdos vuelven.
+</p>
+
+<div class="quote">
+“Dos climas. Una historia. Mil sentimientos.”
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stream">
+
+<h2>STREAM NOW</h2>
+
+<p>
+Disponible próximamente en todas las plataformas.
+Prepárate para entrar al universo visual y sonoro
+más oscuro de DJ Gian C.
+</p>
+
+<div class="platforms">
+
+<div class="platform">Spotify</div>
+<div class="platform">YouTube</div>
+<div class="platform">Apple Music</div>
+<div class="platform">TikTok</div>
 
 </div>
 
@@ -418,15 +587,14 @@ DOS CLIMAS • UNA HISTORIA • MIL SENTIMIENTOS
 
 <footer>
 
-<h2>GROVE STUDIO</h2>
+<h3>VERANO EN INVIERNO</h3>
 
 <p>
-DJ GIAN C © 2026<br>
-VERANO EN INVIERNO
+DJ Gian C x Grove Studio<br>
+2026 © Todos los derechos reservados.
 </p>
 
 </footer>
 
 </body>
 </html>
-```
