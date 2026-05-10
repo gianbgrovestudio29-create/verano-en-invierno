@@ -6,7 +6,7 @@
 
 <title>VERANO EN INVIERNO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Permanent+Marker&family=Caveat:wght@700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,122 +14,35 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
-font-family:'Montserrat',sans-serif;
-background:#000;
+background:#020202;
 color:white;
+font-family:'Montserrat',sans-serif;
 overflow-x:hidden;
 }
 
 /* HERO */
 
 .hero{
-position:relative;
 height:100vh;
 display:flex;
 align-items:center;
 padding:0 7%;
+position:relative;
+overflow:hidden;
 
 background:
-linear-gradient(to right,rgba(0,0,0,.88),rgba(0,0,0,.45),rgba(0,0,0,.2)),
-url('cover1.jpg');
+linear-gradient(to right,rgba(0,0,0,.92),rgba(0,0,0,.45)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop');
 
 background-size:cover;
-background-position:85% center;
-background-repeat:no-repeat;
-}
-
-.hero::after{
-content:'';
-position:absolute;
-inset:0;
-background:linear-gradient(to top,#000 0%,transparent 30%);
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:760px;
-}
-
-.top{
-font-size:12px;
-letter-spacing:10px;
-color:#ff1493;
-margin-bottom:25px;
-text-transform:uppercase;
-}
-
-.title{
-line-height:.82;
-margin-bottom:30px;
-}
-
-.title span{
-display:block;
-font-size:clamp(80px,12vw,210px);
-font-weight:900;
-text-transform:uppercase;
-}
-
-.pink{
-color:#ff1493;
-text-shadow:
-0 0 20px #ff1493,
-0 0 60px #ff1493;
-}
-
-.blue{
-color:#3ea6ff;
-text-shadow:
-0 0 20px #3ea6ff,
-0 0 60px #3ea6ff;
-}
-
-.desc{
-font-size:clamp(18px,2vw,30px);
-line-height:1.8;
-max-width:650px;
-margin-bottom:45px;
-color:#f1f1f1;
-}
-
-.buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:18px 40px;
-border-radius:100px;
-font-weight:700;
-text-decoration:none;
-transition:.3s;
-}
-
-.btn-main{
-background:linear-gradient(90deg,#ff008c,#2f7bff);
-color:white;
-box-shadow:0 0 30px rgba(255,0,140,.5);
-}
-
-.btn-main:hover{
-transform:translateY(-4px) scale(1.03);
-}
-
-.btn-outline{
-border:2px solid rgba(255,255,255,.25);
-color:white;
-backdrop-filter:blur(10px);
-}
-
-.btn-outline:hover{
-background:white;
-color:black;
+background-position:center;
 }
 
 /* GLOW */
@@ -138,225 +51,257 @@ color:black;
 position:absolute;
 border-radius:50%;
 filter:blur(120px);
-opacity:.4;
+opacity:.45;
 }
 
 .glow1{
 width:350px;
 height:350px;
-background:#ff008c;
-left:-100px;
-top:0;
+background:#ff1493;
+top:-120px;
+left:-120px;
 }
 
 .glow2{
 width:400px;
 height:400px;
-background:#0066ff;
-right:-100px;
-bottom:0;
+background:#2563ff;
+right:-120px;
+bottom:-120px;
+}
+
+/* CONTENT */
+
+.content{
+position:relative;
+z-index:2;
+max-width:760px;
+}
+
+.top{
+font-size:12px;
+letter-spacing:12px;
+color:#ff1493;
+margin-bottom:25px;
+text-transform:uppercase;
+}
+
+h1{
+line-height:.8;
+margin-bottom:30px;
+}
+
+h1 span{
+display:block;
+font-size:clamp(90px,12vw,220px);
+font-weight:900;
+text-transform:uppercase;
+letter-spacing:-6px;
+}
+
+.pink{
+font-family:'Permanent Marker',cursive;
+color:#ff1493;
+
+text-shadow:
+0 0 10px #ff1493,
+0 0 25px #ff1493,
+0 0 50px #ff1493;
+
+transform:rotate(-2deg);
+}
+
+.blue{
+font-family:'Permanent Marker',cursive;
+color:#3ea6ff;
+
+text-shadow:
+0 0 10px #3ea6ff,
+0 0 25px #3ea6ff,
+0 0 50px #3ea6ff;
+
+margin-left:40px;
+transform:rotate(2deg);
+}
+
+.desc{
+font-family:'Caveat',cursive;
+font-size:42px;
+line-height:1.5;
+margin-bottom:40px;
+color:#f5f5f5;
+
+text-shadow:
+0 0 10px rgba(0,0,0,.8);
+}
+
+.btn{
+display:inline-block;
+padding:18px 45px;
+border-radius:60px;
+
+background:
+linear-gradient(90deg,#ff1493,#2563ff);
+
+color:white;
+text-decoration:none;
+font-weight:700;
+font-size:18px;
+
+box-shadow:
+0 0 25px rgba(255,20,147,.5);
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.06);
 }
 
 /* TRACKLIST */
 
-.track-section{
+.tracks{
 padding:140px 8%;
 
 background:
-linear-gradient(to bottom,rgba(0,0,0,.82),rgba(0,0,0,.95)),
-url('cover2.jpg');
+linear-gradient(to bottom,rgba(0,0,0,.88),rgba(0,0,0,.95)),
+url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1974&auto=format&fit=crop');
 
 background-size:cover;
-background-position:right center;
+background-position:center;
 background-attachment:fixed;
 }
 
-.section-title{
-text-align:center;
-font-size:70px;
-margin-bottom:70px;
-font-weight:900;
-text-transform:uppercase;
+.title{
+font-size:90px;
+font-family:'Permanent Marker',cursive;
+margin-bottom:20px;
+
+text-shadow:
+0 0 25px #ff1493;
 }
 
-.section-title span{
+.subtitle{
+font-family:'Caveat',cursive;
+font-size:38px;
 color:#ff1493;
+margin-bottom:70px;
+letter-spacing:4px;
 }
 
-.track-grid{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .track{
 background:rgba(255,255,255,.05);
+padding:25px;
+border-radius:25px;
+
+backdrop-filter:blur(10px);
+
 border:1px solid rgba(255,255,255,.08);
-padding:28px;
-border-radius:28px;
-backdrop-filter:blur(12px);
-transition:.35s;
+
+transition:.3s;
 }
 
 .track:hover{
 transform:translateY(-8px);
 border-color:#ff1493;
+
+box-shadow:
+0 0 25px rgba(255,20,147,.25);
 }
 
-.track-number{
+.track span{
 font-size:13px;
+letter-spacing:4px;
 color:#ff1493;
-margin-bottom:10px;
-font-weight:700;
-letter-spacing:3px;
 }
 
 .track h3{
-font-size:28px;
-margin-bottom:10px;
+margin-top:12px;
+font-family:'Permanent Marker',cursive;
+font-size:32px;
+font-weight:400;
 }
 
-.track p{
-color:#d0d0d0;
-line-height:1.7;
-}
+/* FINAL */
 
-/* STORY */
-
-.story{
+.final{
 padding:160px 8%;
-background:#050505;
-}
-
-.story-wrapper{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:80px;
-align-items:center;
-}
-
-.story img{
-width:100%;
-border-radius:35px;
-box-shadow:0 0 50px rgba(0,0,0,.7);
-}
-
-.story h2{
-font-size:70px;
-line-height:1;
-margin-bottom:30px;
-}
-
-.story h2 span{
-color:#3ea6ff;
-}
-
-.story p{
-font-size:20px;
-line-height:2;
-color:#d6d6d6;
-margin-bottom:20px;
-}
-
-.quote{
-font-size:28px;
-font-weight:700;
-color:#ff1493;
-margin-top:30px;
-}
-
-/* STREAM */
-
-.stream{
-padding:140px 8%;
-background:linear-gradient(180deg,#050505,#000814);
 text-align:center;
+
+background:
+linear-gradient(180deg,#050505,#000814);
 }
 
-.stream h2{
-font-size:80px;
-margin-bottom:20px;
+.final h2{
+font-family:'Permanent Marker',cursive;
+font-size:90px;
+margin-bottom:30px;
+
+text-shadow:
+0 0 20px #3ea6ff;
 }
 
-.stream p{
-font-size:22px;
-max-width:850px;
+.final p{
+max-width:900px;
 margin:auto;
-line-height:1.9;
-color:#d0d0d0;
-margin-bottom:50px;
-}
 
-.platforms{
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
-}
-
-.platform{
-padding:20px 40px;
-border-radius:100px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
-font-weight:700;
-transition:.3s;
-}
-
-.platform:hover{
-transform:scale(1.05);
-background:linear-gradient(90deg,#ff008c,#2f7bff);
+font-family:'Caveat',cursive;
+font-size:42px;
+line-height:1.7;
+color:#ddd;
 }
 
 /* FOOTER */
 
 footer{
-padding:80px 8%;
+padding:60px;
 text-align:center;
-background:black;
+background:#050505;
+color:#777;
 border-top:1px solid rgba(255,255,255,.08);
-}
-
-footer h3{
-font-size:50px;
-margin-bottom:15px;
-}
-
-footer p{
-color:#9f9f9f;
-line-height:1.8;
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
 .hero{
-padding:120px 7% 80px;
-background-position:72% center;
+padding:0 8%;
 }
 
-.title span{
-font-size:80px;
+.top{
+font-size:10px;
+letter-spacing:6px;
 }
 
 .desc{
-font-size:18px;
+font-size:30px;
 }
 
-.story-wrapper{
-grid-template-columns:1fr;
+.title{
+font-size:55px;
 }
 
-.story h2,
-.stream h2,
-.section-title{
-font-size:45px;
+.subtitle{
+font-size:28px;
 }
 
-.story p,
-.stream p{
-font-size:18px;
+.track h3{
+font-size:24px;
+}
+
+.final h2{
+font-size:55px;
+}
+
+.final p{
+font-size:28px;
 }
 
 }
@@ -371,13 +316,13 @@ font-size:18px;
 <div class="glow glow1"></div>
 <div class="glow glow2"></div>
 
-<div class="hero-content">
+<div class="content">
 
 <div class="top">
 DJ GIAN C & GROVE STUDIO PRESENTAN
 </div>
 
-<h1 class="title">
+<h1>
 <span class="pink">VERANO</span>
 <span class="blue">INVIERNO</span>
 </h1>
@@ -389,211 +334,136 @@ corazones rotos y recuerdos
 que todavía siguen vivos.
 </p>
 
-<div class="buttons">
-
-<a href="#tracks" class="btn btn-main">
+<a href="#album" class="btn">
 ENTRAR AL ÁLBUM
 </a>
 
-<a href="#story" class="btn btn-outline">
-VER HISTORIA
-</a>
-
-</div>
-
 </div>
 
 </section>
 
-<section class="track-section" id="tracks">
+<section class="tracks" id="album">
 
-<h2 class="section-title">
-TRACK<span>LIST</span>
+<h2 class="title">
+TRACKLIST
 </h2>
 
-<div class="track-grid">
+<div class="subtitle">
+DOS CLIMAS • UNA HISTORIA • MIL SENTIMIENTOS
+</div>
+
+<div class="grid">
 
 <div class="track">
-<div class="track-number">01</div>
+<span>01</span>
 <h3>DOS CLIMAS</h3>
-<p>Una intro melancólica entre el calor y el frío.</p>
 </div>
 
 <div class="track">
-<div class="track-number">02</div>
+<span>02</span>
 <h3>VERANO EN INVIERNO</h3>
-<p>El corazón roto convertido en fiesta.</p>
 </div>
 
 <div class="track">
-<div class="track-number">03</div>
+<span>03</span>
 <h3>+ FRÍO Q AYER</h3>
-<p>La distancia duele más de noche.</p>
 </div>
 
 <div class="track">
-<div class="track-number">04</div>
+<span>04</span>
 <h3>NOCHES X LA PLAYA</h3>
-<p>Reggaetón oscuro y nostalgia.</p>
 </div>
 
 <div class="track">
-<div class="track-number">05</div>
+<span>05</span>
 <h3>OJOS CANSADOS</h3>
-<p>No dormir pensando en ti.</p>
 </div>
 
 <div class="track">
-<div class="track-number">06</div>
+<span>06</span>
 <h3>M NO MIENTAS</h3>
-<p>Promesas que nunca volvieron.</p>
 </div>
 
 <div class="track">
-<div class="track-number">07</div>
+<span>07</span>
 <h3>CORA ROTO :)</h3>
-<p>Sonriendo aunque duela.</p>
 </div>
 
 <div class="track">
-<div class="track-number">08</div>
+<span>08</span>
 <h3>3ER OJO</h3>
-<p>Mirando más allá del amor.</p>
 </div>
 
 <div class="track">
-<div class="track-number">09</div>
+<span>09</span>
 <h3>FLASHBACKS</h3>
-<p>Recuerdos que vuelven.</p>
 </div>
 
 <div class="track">
-<div class="track-number">10</div>
+<span>10</span>
 <h3>FUEGO AZUL</h3>
-<p>Pasión que quema distinto.</p>
 </div>
 
 <div class="track">
-<div class="track-number">11</div>
+<span>11</span>
 <h3>MADRUGÁ</h3>
-<p>Historias después de las 3AM.</p>
 </div>
 
 <div class="track">
-<div class="track-number">12</div>
+<span>12</span>
 <h3>X SI VUELVES</h3>
-<p>Esperando lo imposible.</p>
 </div>
 
 <div class="track">
-<div class="track-number">13</div>
+<span>13</span>
 <h3>MOJANDO LA CITY</h3>
-<p>Lluvia, neón y recuerdos.</p>
 </div>
 
 <div class="track">
-<div class="track-number">14</div>
+<span>14</span>
 <h3>NADIE NOS VIO</h3>
-<p>Amor escondido.</p>
 </div>
 
 <div class="track">
-<div class="track-number">15</div>
+<span>15</span>
 <h3>KM DE DISTANCIA</h3>
-<p>Lejos pero pensando igual.</p>
 </div>
 
 <div class="track">
-<div class="track-number">16</div>
+<span>16</span>
 <h3>POLAROID</h3>
-<p>Fotos que todavía hablan.</p>
 </div>
 
 <div class="track">
-<div class="track-number">17</div>
+<span>17</span>
 <h3>EL FINAL DEL VERANO</h3>
-<p>Cuando todo termina.</p>
 </div>
 
 <div class="track">
-<div class="track-number">18</div>
+<span>18</span>
 <h3>TÚ + YO EN DICIEMBRE</h3>
-<p>El último recuerdo.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="story" id="story">
-
-<div class="story-wrapper">
-
-<div>
-<img src="cover2.jpg">
-</div>
-
-<div>
+<section class="final">
 
 <h2>
-DOS CLIMAS <span>UNA HISTORIA</span>
+04 / 06 / 2026
 </h2>
 
 <p>
-Este álbum mezcla el calor de una playa de madrugada
-con el frío que deja una despedida.
+Un álbum inspirado en las noches sin dormir,
+las playas vacías, el reggaetón melancólico
+y los recuerdos que nunca desaparecen.
 </p>
-
-<p>
-Inspirado en sonidos urbanos, synths oscuros,
-reggaetón melancólico y visuales neon.
-</p>
-
-<p>
-Cada canción se siente como manejar solo por la costa
-a las 3AM mientras los recuerdos vuelven.
-</p>
-
-<div class="quote">
-“Dos climas. Una historia. Mil sentimientos.”
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="stream">
-
-<h2>STREAM NOW</h2>
-
-<p>
-Disponible próximamente en todas las plataformas.
-Prepárate para entrar al universo visual y sonoro
-más oscuro de DJ Gian C.
-</p>
-
-<div class="platforms">
-
-<div class="platform">Spotify</div>
-<div class="platform">YouTube</div>
-<div class="platform">Apple Music</div>
-<div class="platform">TikTok</div>
-
-</div>
 
 </section>
 
 <footer>
-
-<h3>VERANO EN INVIERNO</h3>
-
-<p>
-DJ Gian C x Grove Studio<br>
-2026 © Todos los derechos reservados.
-</p>
-
+VERANO EN INVIERNO © 2026 • DJ GIAN C
 </footer>
 
 </body>
