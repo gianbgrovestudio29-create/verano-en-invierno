@@ -18,105 +18,65 @@ font-family:'Montserrat',sans-serif;
 }
 
 body{
-background:#020202;
-overflow-x:hidden;
+background:#000;
 color:white;
+overflow-x:hidden;
 }
 
-/* HERO */
+/* PORTADA */
 
 .hero{
-position:relative;
 min-height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
+url('https://i.imgur.com/VYkSclB.jpeg');
+
+background-size:cover;
+background-position:center top;
+background-repeat:no-repeat;
+
 display:flex;
 align-items:center;
 padding:80px;
-
-background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.85)),
-url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop');
-
-background-size:cover;
-background-position:center;
-overflow:hidden;
-}
-
-/* PERSONAJE */
-
-.character{
-position:absolute;
-right:0;
-bottom:0;
-height:95%;
-z-index:2;
-
-filter:
-drop-shadow(0 0 30px #0066ff)
-drop-shadow(0 0 60px #ff0080);
-
-animation:float 5s ease-in-out infinite;
-}
-
-/* FUEGO */
-
-.blue-fire{
-position:absolute;
-right:8%;
-bottom:5%;
-width:550px;
-height:550px;
-border-radius:50%;
-
-background:
-radial-gradient(circle,
-rgba(0,153,255,.9) 0%,
-rgba(0,153,255,.35) 35%,
-transparent 70%);
-
-filter:blur(60px);
-z-index:1;
-
-animation:pulse 4s infinite;
-}
-
-/* CONTENIDO */
-
-.content{
 position:relative;
-z-index:5;
+}
+
+.overlay{
 max-width:700px;
+z-index:2;
 }
 
 .top{
-letter-spacing:10px;
+letter-spacing:12px;
 font-size:13px;
-color:#ff2e92;
+color:#ff1493;
 margin-bottom:25px;
 }
 
 h1{
-font-size:120px;
+font-size:140px;
 line-height:.85;
 font-weight:900;
 text-transform:uppercase;
 }
 
 .pink{
-color:#ff0a7a;
-text-shadow:0 0 30px #ff0080;
+color:#ff1493;
+text-shadow:0 0 30px #ff1493;
 }
 
 .blue{
-color:#2ea6ff;
-text-shadow:0 0 30px #0080ff;
+color:#1e90ff;
+text-shadow:0 0 30px #1e90ff;
 }
 
-.subtitle{
-margin-top:30px;
-font-size:22px;
+.description{
+margin-top:35px;
+font-size:26px;
 line-height:1.7;
-color:#e2e2e2;
 max-width:600px;
+color:#ddd;
 }
 
 .btn{
@@ -124,11 +84,12 @@ display:inline-block;
 margin-top:40px;
 padding:20px 45px;
 border-radius:18px;
-text-decoration:none;
-font-weight:700;
-background:linear-gradient(90deg,#ff0080,#0066ff);
+background:linear-gradient(90deg,#ff1493,#1e90ff);
 color:white;
-box-shadow:0 0 30px rgba(255,0,128,.4);
+font-weight:700;
+text-decoration:none;
+font-size:18px;
+box-shadow:0 0 25px rgba(255,20,147,.5);
 transition:.3s;
 }
 
@@ -138,55 +99,89 @@ transform:scale(1.05);
 
 /* TRACKLIST */
 
-.section{
-padding:120px 60px;
-background:#050505;
+.tracks-section{
+
+background:
+linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.96)),
+url('https://i.imgur.com/VYkSclB.jpeg');
+
+background-size:cover;
+background-position:center;
+
+padding:120px 80px;
 }
 
 .section-title{
 font-size:70px;
+margin-bottom:70px;
 font-weight:900;
-margin-bottom:50px;
+text-align:center;
 }
 
-.tracks{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(3,1fr);
 gap:25px;
 }
 
 .track{
-padding:28px;
-border-radius:24px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.04),
-rgba(255,255,255,.02)
-);
-
+background:rgba(255,255,255,.05);
 border:1px solid rgba(255,255,255,.08);
-
-transition:.3s;
 backdrop-filter:blur(10px);
+padding:25px;
+border-radius:25px;
+transition:.3s;
 }
 
 .track:hover{
-transform:translateY(-6px);
-border-color:#ff0080;
-box-shadow:0 0 25px rgba(255,0,128,.2);
+transform:translateY(-8px);
+border-color:#ff1493;
+box-shadow:0 0 30px rgba(255,20,147,.3);
 }
 
 .track span{
 font-size:13px;
+color:#ff1493;
 letter-spacing:3px;
-color:#ff0080;
 }
 
 .track h3{
-margin-top:10px;
-font-size:26px;
+margin-top:12px;
+font-size:28px;
+}
+
+/* SOBRE EL ÁLBUM */
+
+.about{
+padding:140px 80px;
+
+background:
+linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.95)),
+url('https://i.imgur.com/VYkSclB.jpeg');
+
+background-size:cover;
+background-position:center;
+}
+
+.about-box{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+padding:50px;
+border-radius:35px;
+backdrop-filter:blur(15px);
+}
+
+.about h2{
+font-size:60px;
+margin-bottom:30px;
+}
+
+.about p{
+font-size:22px;
+line-height:2;
+color:#ddd;
 }
 
 /* FOOTER */
@@ -194,76 +189,56 @@ font-size:26px;
 footer{
 padding:60px;
 text-align:center;
-font-size:14px;
-color:#777;
-background:black;
+background:#000;
 border-top:1px solid rgba(255,255,255,.08);
 }
 
-/* ANIMACIONES */
-
-@keyframes float{
-
-0%{
-transform:translateY(0px);
+footer h3{
+font-size:50px;
+font-weight:900;
+margin-bottom:20px;
 }
 
-50%{
-transform:translateY(-15px);
+footer p{
+color:#999;
+font-size:16px;
 }
 
-100%{
-transform:translateY(0px);
-}
+/* MOBILE */
 
-}
-
-@keyframes pulse{
-
-0%{
-transform:scale(1);
-opacity:.8;
-}
-
-50%{
-transform:scale(1.08);
-opacity:1;
-}
-
-100%{
-transform:scale(1);
-opacity:.8;
-}
-
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
+@media(max-width:900px){
 
 .hero{
 padding:40px;
-}
-
-.character{
-opacity:.35;
-height:80%;
+align-items:flex-end;
 }
 
 h1{
-font-size:70px;
+font-size:75px;
 }
 
-.subtitle{
+.description{
 font-size:18px;
 }
 
-.section{
-padding:80px 25px;
+.grid{
+grid-template-columns:1fr;
 }
 
 .section-title{
 font-size:45px;
+}
+
+.about{
+padding:80px 30px;
+}
+
+.about h2{
+font-size:40px;
+}
+
+.about p{
+font-size:18px;
 }
 
 }
@@ -273,36 +248,21 @@ font-size:45px;
 
 <body>
 
-<!-- HERO -->
-
 <section class="hero">
 
-<!-- FUEGO -->
-<div class="blue-fire"></div>
+<div class="overlay">
 
-<!-- PERSONAJE -->
-<img
-class="character"
-src="https://pngimg.com/d/superhero_PNG82.png"
-alt=""
->
-
-<!-- CONTENIDO -->
-<div class="content">
-
-<div class="top">
+<p class="top">
 DJ GIAN C & GROVE STUDIO PRESENTAN
-</div>
+</p>
 
 <h1>
 <span class="pink">VERANO</span><br>
 <span class="blue">INVIERNO</span>
 </h1>
 
-<p class="subtitle">
-18 canciones inspiradas en playas vacías,
-madrugadas eternas, fuego azul,
-amores rotos y recuerdos que nunca murieron.
+<p class="description">
+18 canciones inspiradas en playas vacías, fuego azul, madrugadas eternas, corazones rotos y recuerdos que todavía siguen vivos.
 </p>
 
 <a href="#tracks" class="btn">
@@ -313,58 +273,70 @@ ENTRAR AL ÁLBUM
 
 </section>
 
-<!-- TRACKLIST -->
-
-<section class="section" id="tracks">
+<section class="tracks-section" id="tracks">
 
 <h2 class="section-title">
 TRACKLIST
 </h2>
 
-<div class="tracks">
+<div class="grid">
 
 <div class="track"><span>01</span><h3>DOS CLIMAS</h3></div>
-
 <div class="track"><span>02</span><h3>VERANO EN INVIERNO</h3></div>
-
 <div class="track"><span>03</span><h3>+ FRÍO Q AYER</h3></div>
 
 <div class="track"><span>04</span><h3>NOCHES X LA PLAYA</h3></div>
-
 <div class="track"><span>05</span><h3>OJOS CANSADOS</h3></div>
-
 <div class="track"><span>06</span><h3>M NO MIENTAS</h3></div>
 
 <div class="track"><span>07</span><h3>CORA ROTO :)</h3></div>
-
 <div class="track"><span>08</span><h3>3ER OJO</h3></div>
-
 <div class="track"><span>09</span><h3>FLASHBACKS</h3></div>
 
 <div class="track"><span>10</span><h3>FUEGO AZUL</h3></div>
-
 <div class="track"><span>11</span><h3>MADRUGÁ</h3></div>
-
 <div class="track"><span>12</span><h3>X SI VUELVES</h3></div>
 
 <div class="track"><span>13</span><h3>MOJANDO LA CITY</h3></div>
-
 <div class="track"><span>14</span><h3>NADIE NOS VIO</h3></div>
-
 <div class="track"><span>15</span><h3>KM DE DISTANCIA</h3></div>
 
 <div class="track"><span>16</span><h3>POLAROID</h3></div>
-
 <div class="track"><span>17</span><h3>EL FINAL DEL VERANO</h3></div>
-
 <div class="track"><span>18</span><h3>TÚ + YO EN DICIEMBRE</h3></div>
 
 </div>
 
 </section>
 
+<section class="about">
+
+<div class="about-box">
+
+<h2>SOBRE EL ÁLBUM</h2>
+
+<p>
+“VERANO EN INVIERNO” mezcla reggaetón melancólico,
+trap latino y sonidos nocturnos inspirados en playas
+vacías, amores imposibles y recuerdos que todavía arden.
+<br><br>
+Un viaje entre el calor y el frío.
+Entre la fiesta y el vacío.
+Entre el fuego azul y las madrugadas eternas.
+</p>
+
+</div>
+
+</section>
+
 <footer>
-© 2026 • VERANO EN INVIERNO • DJ GIAN C & GROVE STUDIO
+
+<h3>GROVE STUDIO</h3>
+
+<p>
+© 2026 — DJ GIAN C & GROVE STUDIO
+</p>
+
 </footer>
 
 </body>
