@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>VERANO EN INVIERNO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,258 +14,248 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
+font-family:'Montserrat',sans-serif;
 background:#000;
-color:white;
 overflow-x:hidden;
+color:white;
 }
 
-/* PORTADA */
+/* HERO */
 
 .hero{
+width:100%;
 min-height:100vh;
-
 background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
-url('https://i.imgur.com/VYkSclB.jpeg');
-
+linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.85)),
+url('cover1.jpg');
 background-size:cover;
-background-position:center top;
+background-position:center;
 background-repeat:no-repeat;
-
 display:flex;
 align-items:center;
-padding:80px;
+padding:80px 8%;
 position:relative;
 }
 
-.overlay{
+.hero-content{
 max-width:700px;
 z-index:2;
 }
 
-.top{
-letter-spacing:12px;
+.top-text{
 font-size:13px;
+letter-spacing:12px;
 color:#ff1493;
-margin-bottom:25px;
+margin-bottom:30px;
+text-transform:uppercase;
 }
 
-h1{
-font-size:140px;
+.title{
 line-height:.85;
+margin-bottom:30px;
+}
+
+.title span{
+display:block;
+font-size:clamp(70px,12vw,170px);
 font-weight:900;
 text-transform:uppercase;
 }
 
 .pink{
 color:#ff1493;
-text-shadow:0 0 30px #ff1493;
+text-shadow:
+0 0 15px #ff1493,
+0 0 40px #ff1493;
 }
 
 .blue{
-color:#1e90ff;
-text-shadow:0 0 30px #1e90ff;
+color:#3aa8ff;
+text-shadow:
+0 0 15px #3aa8ff,
+0 0 40px #3aa8ff;
 }
 
-.description{
-margin-top:35px;
-font-size:26px;
-line-height:1.7;
-max-width:600px;
-color:#ddd;
+.desc{
+font-size:clamp(18px,2vw,32px);
+line-height:1.8;
+max-width:700px;
+color:#f1f1f1;
+margin-bottom:40px;
 }
 
 .btn{
 display:inline-block;
-margin-top:40px;
 padding:20px 45px;
-border-radius:18px;
-background:linear-gradient(90deg,#ff1493,#1e90ff);
+border-radius:50px;
+background:linear-gradient(90deg,#ff1493,#2563ff);
 color:white;
-font-weight:700;
 text-decoration:none;
+font-weight:700;
 font-size:18px;
-box-shadow:0 0 25px rgba(255,20,147,.5);
 transition:.3s;
+box-shadow:0 0 30px rgba(255,20,147,.5);
 }
 
 .btn:hover{
-transform:scale(1.05);
+transform:scale(1.06);
 }
 
 /* TRACKLIST */
 
-.tracks-section{
-
+.track-section{
+position:relative;
+padding:140px 8%;
 background:
-linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.96)),
-url('https://i.imgur.com/VYkSclB.jpeg');
-
+linear-gradient(to bottom,rgba(0,0,0,.8),rgba(0,0,0,.95)),
+url('cover2.jpg');
 background-size:cover;
 background-position:center;
-
-padding:120px 80px;
+background-attachment:fixed;
 }
 
-.section-title{
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(2px);
+}
+
+.track-wrapper{
+position:relative;
+z-index:2;
+}
+
+.track-title{
 font-size:70px;
-margin-bottom:70px;
 font-weight:900;
-text-align:center;
+margin-bottom:20px;
+text-transform:uppercase;
+}
+
+.track-sub{
+font-size:20px;
+color:#ff4da6;
+margin-bottom:80px;
+letter-spacing:4px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .track{
-background:rgba(255,255,255,.05);
+background:rgba(0,0,0,.45);
 border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
 padding:25px;
 border-radius:25px;
+backdrop-filter:blur(12px);
 transition:.3s;
 }
 
 .track:hover{
 transform:translateY(-8px);
 border-color:#ff1493;
-box-shadow:0 0 30px rgba(255,20,147,.3);
+box-shadow:0 0 30px rgba(255,20,147,.25);
 }
 
-.track span{
-font-size:13px;
+.track-number{
+font-size:14px;
 color:#ff1493;
+margin-bottom:10px;
 letter-spacing:3px;
 }
 
 .track h3{
-margin-top:12px;
 font-size:28px;
+margin-bottom:12px;
 }
 
-/* SOBRE EL ÁLBUM */
-
-.about{
-padding:140px 80px;
-
-background:
-linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.95)),
-url('https://i.imgur.com/VYkSclB.jpeg');
-
-background-size:cover;
-background-position:center;
-}
-
-.about-box{
-max-width:900px;
-margin:auto;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-padding:50px;
-border-radius:35px;
-backdrop-filter:blur(15px);
-}
-
-.about h2{
-font-size:60px;
-margin-bottom:30px;
-}
-
-.about p{
-font-size:22px;
-line-height:2;
-color:#ddd;
+.track p{
+color:#cfcfcf;
+line-height:1.6;
 }
 
 /* FOOTER */
 
 footer{
-padding:60px;
+padding:80px 8%;
 text-align:center;
-background:#000;
+background:#050505;
 border-top:1px solid rgba(255,255,255,.08);
 }
 
-footer h3{
-font-size:50px;
-font-weight:900;
+footer h2{
+font-size:60px;
 margin-bottom:20px;
+font-weight:900;
 }
 
 footer p{
-color:#999;
-font-size:16px;
+color:#aaa;
+line-height:1.8;
+font-size:15px;
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
 .hero{
-padding:40px;
-align-items:flex-end;
+padding:100px 7%;
 }
 
-h1{
-font-size:75px;
+.top-text{
+letter-spacing:6px;
+font-size:10px;
 }
 
-.description{
+.track-title{
+font-size:42px;
+}
+
+.desc{
 font-size:18px;
 }
 
-.grid{
-grid-template-columns:1fr;
-}
-
-.section-title{
-font-size:45px;
-}
-
-.about{
-padding:80px 30px;
-}
-
-.about h2{
-font-size:40px;
-}
-
-.about p{
-font-size:18px;
+.btn{
+padding:16px 30px;
+font-size:15px;
 }
 
 }
 
 </style>
 </head>
-
 <body>
 
 <section class="hero">
 
-<div class="overlay">
+<div class="hero-content">
 
-<p class="top">
+<div class="top-text">
 DJ GIAN C & GROVE STUDIO PRESENTAN
-</p>
+</div>
 
-<h1>
-<span class="pink">VERANO</span><br>
+<div class="title">
+<span class="pink">VERANO</span>
 <span class="blue">INVIERNO</span>
-</h1>
+</div>
 
-<p class="description">
-18 canciones inspiradas en playas vacías, fuego azul, madrugadas eternas, corazones rotos y recuerdos que todavía siguen vivos.
-</p>
+<div class="desc">
+18 canciones inspiradas en playas vacías,
+fuego azul, madrugadas eternas,
+corazones rotos y recuerdos
+que todavía siguen vivos.
+</div>
 
-<a href="#tracks" class="btn">
+<a href="#album" class="btn">
 ENTRAR AL ÁLBUM
 </a>
 
@@ -273,57 +263,131 @@ ENTRAR AL ÁLBUM
 
 </section>
 
-<section class="tracks-section" id="tracks">
+<section class="track-section" id="album">
 
-<h2 class="section-title">
+<div class="overlay"></div>
+
+<div class="track-wrapper">
+
+<h2 class="track-title">
 TRACKLIST
 </h2>
 
-<div class="grid">
-
-<div class="track"><span>01</span><h3>DOS CLIMAS</h3></div>
-<div class="track"><span>02</span><h3>VERANO EN INVIERNO</h3></div>
-<div class="track"><span>03</span><h3>+ FRÍO Q AYER</h3></div>
-
-<div class="track"><span>04</span><h3>NOCHES X LA PLAYA</h3></div>
-<div class="track"><span>05</span><h3>OJOS CANSADOS</h3></div>
-<div class="track"><span>06</span><h3>M NO MIENTAS</h3></div>
-
-<div class="track"><span>07</span><h3>CORA ROTO :)</h3></div>
-<div class="track"><span>08</span><h3>3ER OJO</h3></div>
-<div class="track"><span>09</span><h3>FLASHBACKS</h3></div>
-
-<div class="track"><span>10</span><h3>FUEGO AZUL</h3></div>
-<div class="track"><span>11</span><h3>MADRUGÁ</h3></div>
-<div class="track"><span>12</span><h3>X SI VUELVES</h3></div>
-
-<div class="track"><span>13</span><h3>MOJANDO LA CITY</h3></div>
-<div class="track"><span>14</span><h3>NADIE NOS VIO</h3></div>
-<div class="track"><span>15</span><h3>KM DE DISTANCIA</h3></div>
-
-<div class="track"><span>16</span><h3>POLAROID</h3></div>
-<div class="track"><span>17</span><h3>EL FINAL DEL VERANO</h3></div>
-<div class="track"><span>18</span><h3>TÚ + YO EN DICIEMBRE</h3></div>
-
+<div class="track-sub">
+DOS CLIMAS • UNA HISTORIA • MIL SENTIMIENTOS
 </div>
 
-</section>
+<div class="grid">
 
-<section class="about">
+<div class="track">
+<div class="track-number">01</div>
+<h3>DOS CLIMAS</h3>
+<p>El inicio del viaje.</p>
+</div>
 
-<div class="about-box">
+<div class="track">
+<div class="track-number">02</div>
+<h3>VERANO EN INVIERNO</h3>
+<p>Calor y frío chocando.</p>
+</div>
 
-<h2>SOBRE EL ÁLBUM</h2>
+<div class="track">
+<div class="track-number">03</div>
+<h3>+ FRÍO Q AYER</h3>
+<p>La distancia duele más.</p>
+</div>
 
-<p>
-“VERANO EN INVIERNO” mezcla reggaetón melancólico,
-trap latino y sonidos nocturnos inspirados en playas
-vacías, amores imposibles y recuerdos que todavía arden.
-<br><br>
-Un viaje entre el calor y el frío.
-Entre la fiesta y el vacío.
-Entre el fuego azul y las madrugadas eternas.
-</p>
+<div class="track">
+<div class="track-number">04</div>
+<h3>NOCHES X LA PLAYA</h3>
+<p>Recuerdos bajo la luna.</p>
+</div>
+
+<div class="track">
+<div class="track-number">05</div>
+<h3>OJOS CANSADOS</h3>
+<p>No dormir pensando en ti.</p>
+</div>
+
+<div class="track">
+<div class="track-number">06</div>
+<h3>M NO MIENTAS</h3>
+<p>Promesas que no volvieron.</p>
+</div>
+
+<div class="track">
+<div class="track-number">07</div>
+<h3>CORA ROTO :)</h3>
+<p>Sonriendo aunque duela.</p>
+</div>
+
+<div class="track">
+<div class="track-number">08</div>
+<h3>3ER OJO</h3>
+<p>Viendo más allá del amor.</p>
+</div>
+
+<div class="track">
+<div class="track-number">09</div>
+<h3>FLASHBACKS</h3>
+<p>Todo vuelve de golpe.</p>
+</div>
+
+<div class="track">
+<div class="track-number">10</div>
+<h3>FUEGO AZUL</h3>
+<p>Pasión que quema distinto.</p>
+</div>
+
+<div class="track">
+<div class="track-number">11</div>
+<h3>MADRUGÁ</h3>
+<p>Historias después de las 3AM.</p>
+</div>
+
+<div class="track">
+<div class="track-number">12</div>
+<h3>X SI VUELVES</h3>
+<p>Esperando algo imposible.</p>
+</div>
+
+<div class="track">
+<div class="track-number">13</div>
+<h3>MOJANDO LA CITY</h3>
+<p>Lluvia, neón y recuerdos.</p>
+</div>
+
+<div class="track">
+<div class="track-number">14</div>
+<h3>NADIE NOS VIO</h3>
+<p>Amor escondido.</p>
+</div>
+
+<div class="track">
+<div class="track-number">15</div>
+<h3>KM DE DISTANCIA</h3>
+<p>Lejos pero pensando igual.</p>
+</div>
+
+<div class="track">
+<div class="track-number">16</div>
+<h3>POLAROID</h3>
+<p>Fotos que todavía hablan.</p>
+</div>
+
+<div class="track">
+<div class="track-number">17</div>
+<h3>EL FINAL DEL VERANO</h3>
+<p>Cuando todo termina.</p>
+</div>
+
+<div class="track">
+<div class="track-number">18</div>
+<h3>TÚ + YO EN DICIEMBRE</h3>
+<p>El último recuerdo.</p>
+</div>
+
+</div>
 
 </div>
 
@@ -331,10 +395,11 @@ Entre el fuego azul y las madrugadas eternas.
 
 <footer>
 
-<h3>GROVE STUDIO</h3>
+<h2>GROVE STUDIO</h2>
 
 <p>
-© 2026 — DJ GIAN C & GROVE STUDIO
+DJ GIAN C © 2026<br>
+VERANO EN INVIERNO
 </p>
 
 </footer>
