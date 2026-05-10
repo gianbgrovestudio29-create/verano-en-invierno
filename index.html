@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VERANO EN INVIERNO</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:black;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px;
+      background:
+      radial-gradient(circle at top left, rgba(0,255,255,0.2), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(0,100,255,0.2), transparent 30%),
+      black;
+    }
+
+    h1{
+      font-size:90px;
+      line-height:0.9;
+      font-weight:900;
+    }
+
+    h1 span{
+      color:#00d9ff;
+    }
+
+    .subtitle{
+      margin-top:20px;
+      color:#aaa;
+      font-size:22px;
+    }
+
+    .date{
+      margin-top:35px;
+      display:inline-block;
+      padding:18px 30px;
+      border:1px solid rgba(0,217,255,.4);
+      border-radius:20px;
+      background:rgba(0,217,255,.1);
+    }
+
+    .date h2{
+      font-size:35px;
+      margin-top:5px;
+    }
+
+    .btn{
+      margin-top:30px;
+      display:inline-block;
+      padding:16px 35px;
+      background:#00d9ff;
+      color:black;
+      border-radius:18px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    .tracks{
+      padding:100px 30px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .tracks h2{
+      font-size:50px;
+      margin-bottom:40px;
+    }
+
+    .song{
+      border:1px solid rgba(255,255,255,.1);
+      padding:20px;
+      margin-bottom:15px;
+      border-radius:20px;
+      transition:.3s;
+    }
+
+    .song:hover{
+      border-color:#00d9ff;
+      background:rgba(0,217,255,.05);
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#666;
+      border-top:1px solid rgba(255,255,255,.1);
+    }
+
+    @media(max-width:700px){
+      h1{
+        font-size:55px;
+      }
+
+      .tracks h2{
+        font-size:35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div>
+    <p style="letter-spacing:8px;color:#00d9ff;">
+      www.veranoeninvierno.pe.com
+    </p>
+
+    <h1>
+      VERANO<br>
+      <span>EN INVIERNO</span>
+    </h1>
+
+    <p class="subtitle">
+      Noches frías, playas vacías y recuerdos que todavía queman.
+    </p>
+
+    <div class="date">
+      <p>LANZAMIENTO OFICIAL</p>
+      <h2>04 / 06 / 2026</h2>
+    </div>
+
+    <br>
+
+    <a href="#" class="btn">
+      ESCUCHAR TRAILER
+    </a>
+  </div>
+</section>
+
+<section class="tracks">
+
+  <h2>TRACKLIST</h2>
+
+  <div class="song">01 — DOS CLIMAS</div>
+  <div class="song">02 — VERANO EN INVIERNO</div>
+  <div class="song">03 — + FRÍO Q AYER</div>
+  <div class="song">04 — NOCHES X LA PLAYA</div>
+  <div class="song">05 — OJOS CANSADOS</div>
+  <div class="song">06 — M NO MIENTAS</div>
+  <div class="song">07 — CORA ROTO :)</div>
+  <div class="song">08 — 3ER OJO</div>
+  <div class="song">09 — FLASHBACKS</div>
+  <div class="song">10 — FUEGO AZUL</div>
+  <div class="song">11 — MADRUGÁ</div>
+  <div class="song">12 — X SI VUELVES</div>
+  <div class="song">13 — MOJANDO LA CITY</div>
+  <div class="song">14 — NADIE NOS VIO</div>
+  <div class="song">15 — KM DE DISTANCIA</div>
+
+</section>
+
+<footer>
+  © 2026 VERANO EN INVIERNO
+</footer>
+
+</body>
+</html>
